@@ -49,8 +49,8 @@ for (const row of cases) {
 
     await page.getByPlaceholder('Nhập mã giảm giá...').fill(code);
     const [reply] = await Promise.all([
-      page.waitForResponse(({ url, request }) =>
-        new URL(url()).pathname === '/api/apply-coupon' && request().method() === 'POST'),
+      page.waitForResponse((response) =>
+        new URL(response.url()).pathname === '/api/apply-coupon' && response.request().method() === 'POST'),
       page.getByRole('button', { name: 'Áp dụng', exact: true }).click(),
     ]);
     const details = await reply.text();
