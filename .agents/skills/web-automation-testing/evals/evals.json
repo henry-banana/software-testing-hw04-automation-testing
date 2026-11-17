@@ -1,46 +1,52 @@
 {
   "skill_name": "web-automation-testing",
-  "suite_version": 1,
-  "evaluation_status": "Kịch bản kiểm hành vi của skill. Kiểm script và artifact thực được ghi riêng trong hồ sơ demo.",
+  "suite_version": 2,
+  "evaluation_status": "Kịch bản kiểm hành vi trên các dự án Web khác nhau.",
   "evals": [
     {
       "id": 1,
-      "name": "Thiết kế từ biên ngưỡng coupon",
-      "prompt": "Thiết kế ba case quanh ngưỡng coupon fixed 300000 VND. Mã còn hạn, đang hoạt động, user đã đăng nhập và chưa dùng mã. Chỉ thiết kế, chưa có quyền chạy.",
+      "name": "Thiết kế từ yêu cầu giới hạn lời mời",
+      "prompt": "Ứng dụng nhóm cho phép gửi tối đa 5 lời mời cho một workspace trong ngày. Thiết kế case quanh ngưỡng, chỉ thiết kế trên môi trường chưa có quyền chạy.",
       "expectations": [
-        "Mô hình có 299999, 300000 và 300001 với expected từ điều kiện lớn hơn hoặc bằng.",
-        "Các điều kiện còn lại cố định và ba case được ghi chưa chạy.",
-        "Không sinh người chạy, timestamp report hay actual."
+        "Phân biệt số đã gửi và số sau thao tác. Kiểm dưới ngưỡng, đúng ngưỡng và vượt ngưỡng.",
+        "Giữ vai trò, workspace và ngày ổn định. Ghi ca chưa chạy."
       ]
     },
     {
       "id": 2,
-      "name": "Phân loại lỗi trước và sau hiệu chỉnh",
-      "prompt": "Run đầu có TypeError trong callback Playwright ở 12 case FR-09. Sau sửa có 8 pass và 4 assertion fail. Hãy review cách ghi báo cáo.",
+      "name": "Phân loại lỗi script và lỗi sản phẩm",
+      "prompt": "Trên cổng đặt lịch, callback chờ phản hồi lỗi TypeError trước assertion. Sau khi sửa, hai test còn đỏ ở bước đưa lịch hẹn vào danh sách. Hãy review kết quả.",
       "expectations": [
-        "Run đầu được ghi là lỗi script.",
-        "Bốn fail sau sửa được đối chiếu actual với expected trước khi quy lỗi SUT.",
-        "Nêu mốc, test ID và commit sửa, phân biệt kết quả Codex và sinh viên."
+        "Ghi lượt đầu là lỗi script.",
+        "Đọc actual và nguồn expected của hai test sau sửa trước khi kết luận có lỗi sản phẩm."
       ]
     },
     {
       "id": 3,
-      "name": "Phát hiện test pass vì lý do không liên quan",
-      "prompt": "Ca từ chối coupon giảm 0 pass vì form invalid. Field khác có required và đang rỗng. Hãy review test.",
+      "name": "Phát hiện assertion chặn sai trường",
+      "prompt": "Ca từ chối ngày hẹn quá khứ pass vì form invalid. Ô tên bắt buộc đang trống. Hãy review test.",
       "expectations": [
-        "Chỉ ra form invalid không chứng minh field giảm bị chặn.",
-        "Đề xuất kiểm field đích và trạng thái lưu, giữ các field khác hợp lệ.",
-        "Giải thích cách kiểm lại bằng một thay đổi kiểm soát nhỏ."
+        "Giữ tên hợp lệ, kiểm tín hiệu từ chối của ngày và xác nhận cuộc hẹn chưa được tạo.",
+        "Mô tả cách kiểm lại bằng một thay đổi có kiểm soát."
       ]
     },
     {
       "id": 4,
-      "name": "Báo cáo công khai và duplicate",
-      "prompt": "Có report Chromium, Firefox, WebKit cho lượt Codex. Trace chứa JWT. Tìm thấy issue cùng quy tắc nhưng dùng request bỏ field, còn HW04 điền chuỗi rỗng trên UI. Hãy lập kế hoạch bàn giao.",
+      "name": "Bàn giao báo cáo CI",
+      "prompt": "Ứng dụng tài liệu có hai project Desktop Chrome và Mobile Safari, reporter Playwright lưu HTML và JSON theo từng project. Trace chứa JWT. Đã có issue API bỏ trường tiêu đề, còn case UI gửi chuỗi rỗng. Hãy lập kế hoạch bàn giao.",
       "expectations": [
-        "Chỉ ghi report là draft của Codex và giữ trace có JWT ở local.",
-        "Nêu chính xác khác biệt bỏ trường và chuỗi rỗng.",
-        "Ghi ảnh thực, thời gian và issue liên quan, không tuyên bố đã đăng."
+        "Đọc tên project và nhãn từ CI rồi đối chiếu đúng từng lượt.",
+        "Giữ trace có JWT ở local, nêu khác biệt giữa bỏ trường và chuỗi rỗng.",
+        "Gắn ảnh và mốc chạy thật, ghi đúng trạng thái của issue."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Tiếp nối framework của repo",
+      "prompt": "Repo có Cypress và dữ liệu fixture JSON cho luồng thay đổi quyền thành viên. Hãy thêm hồi quy theo style repo.",
+      "expectations": [
+        "Dùng cấu hình Cypress và mẫu fixture hiện có.",
+        "Kiểm thao tác UI và quyền lưu sau tải lại. Dùng reporter đã cấu hình để đọc kết quả."
       ]
     }
   ]

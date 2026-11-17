@@ -12,7 +12,7 @@ from pathlib import Path
 from zipfile import BadZipFile, ZipFile
 
 
-BROWSERS = ("chromium", "firefox", "webkit")
+DEFAULT_PROJECTS = ("chromium", "firefox", "webkit")
 STATUSES = ("expected", "unexpected", "flaky", "skipped")
 REPORT_DATA = re.compile(
     r'<template id="playwrightReportBase64">data:application/zip;base64,'
@@ -148,17 +148,34 @@ def parse_mapping(values, label, parser):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--mode", choices=("draft", "official"), required=True)
+    label = parser.add_mutually_exclusive_group(required=True)
+    label.add_argument("--run-label", help="first segment of the report title")
+    label.add_argument("--mode", choices=("draft", "official"), help="legacy coursework labels")
     parser.add_argument("--student-id", help="required for official mode")
+    parser.add_argument("--projects", nargs="+", default=DEFAULT_PROJECTS, metavar="PROJECT")
     parser.add_argument("--batch", type=Path, required=True, help="default batch directory")
     parser.add_argument("--feature-batch", action="append", default=[], metavar="FEATURE=PATH")
     parser.add_argument("--expect", required=True, action="append", metavar="FEATURE=COUNT")
     parser.add_argument("--scan-attachments", action="store_true")
     args = parser.parse_args(argv)
 
-    if args.mode == "official" and not re.fullmatch(r"[0-9]{8}", args.student_id or ""):
-        parser.error("--mode official requires an eight-digit --student-id")
-    actor = "Draft run by: Codex" if args.mode == "draft" else f"Run by: {args.student_id}"
+    if args.run_label is not None:
+        actor = args.run_label
+        if not actor.strip() or " | " in actor:
+            parser.error("--run-label must be a nonempty report title segment")
+    elif args.mode == "draft":
+        actor = "Draft run by: Codex"
+    else:
+        if not re.fullmatch(r"[0-9]{8}", args.student_id or ""):
+            parser.error("--mode official requires an eight-digit --student-id")
+        actor = f"Run by: {args.student_id}"
+    if any(
+        not project or project.endswith((".", " ")) or re.search(r'[\\/:*?"<>|\x00-\x1f]', project)
+        for project in args.projects
+    ):
+        parser.error("--projects requires project names that can be used as directory names")
+    if len({project.casefold() for project in args.projects}) != len(args.projects):
+        parser.error("--projects requires distinct project names")
     expectations = parse_mapping(args.expect, "--expect", parser)
     batches = parse_mapping(args.feature_batch, "--feature-batch", parser)
     if not batches.keys() <= expectations.keys():
@@ -170,7 +187,7 @@ def main(argv=None):
         if not re.fullmatch(r"[1-9]\d*", count):
             parser.error(f"case count for {feature} must be a positive integer")
         reference_ids = None
-        for browser in BROWSERS:
+        for browser in args.projects:
             folder = Path(batches.get(feature, args.batch)) / feature.lower() / browser
             try:
                 ids, stats, markers = check_cell(
@@ -179,7 +196,7 @@ def main(argv=None):
                 if reference_ids is None:
                     reference_ids = ids
                 elif ids != reference_ids:
-                    raise ValueError("case IDs differ across browsers")
+                    raise ValueError("case IDs differ across projects")
                 totals.update(stats)
                 print(f"{feature}/{browser}: {len(ids)} cases, {stats['expected']} pass, {stats['unexpected']} fail")
                 if markers:

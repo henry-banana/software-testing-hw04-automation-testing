@@ -1,30 +1,19 @@
 ---
 name: web-automation-testing
-description: Design, implement, review, or verify data-driven Playwright Web E2E tests for EShop user and admin features. Use for requirement-to-case mapping, fixture isolation, multi-browser HTML reports, and reproducible bug evidence for HW04 or a new Web feature.
+description: Design data-driven web end-to-end tests from requirements, implement or maintain browser suites, debug weak assertions and flaky tests, and verify cross-browser reports or reproducible bug evidence.
 ---
 
-# Tự động hóa kiểm thử web EShop
+# Tự động hóa kiểm thử web
 
-Chọn bước theo đầu ra người dùng cần. Đọc đề và phiên bản SRS áp dụng, repo test, SHA SUT, feature, quyền sử dụng trình duyệt và phạm vi thay đổi dữ liệu. Nếu chỉ review, dùng artifact hiện có và chạy thử trên bản sao theo quyền đã cấp. Chạy suite bằng Playwright Test. Helper đọc report cần Python 3.10 trở lên.
+Xác định yêu cầu, hành vi cần kiểm, phiên bản ứng dụng, môi trường thử và phạm vi thực thi. Tìm cấu hình, test hiện có và lệnh chạy trong repo. Dùng bộ công cụ hiện có nếu phù hợp, ví dụ Playwright, Cypress hoặc Selenium. Khi repo chưa có runner, chọn Playwright Test theo nhu cầu về trình duyệt, fixture và báo cáo.
 
-## Quy trình theo yêu cầu
+## Quy trình
 
-1. **Thiết kế.** Đọc [thiết kế và fixture](references/design-and-fixtures.md) để chuyển điều kiện SRS, ca cũ và biên thành case có expected và hậu điều kiện. Dùng [mẫu thiết kế](assets/feature-plan.md) nếu feature chưa có hồ sơ.
-2. **Viết Web E2E.** Đọc [Playwright CLI và Test](references/playwright-workflow.md) khi cần khảo sát UI, viết spec hoặc sửa locator, oracle và fixture. Dùng dữ liệu ngoài theo ID. Thao tác đang được kiểm phải đi qua UI.
-3. **Chạy và kiểm bằng chứng.** Đọc [ma trận và artifact](references/execution-and-evidence.md) để preflight, chạy phạm vi phù hợp, so JSON với HTML và xác minh ảnh. Dùng `scripts/verify_matrix.py` khi report theo cấu trúc runner của HW04.
-4. **Review và báo lỗi.** Đọc [review, lỗi và AI audit](references/review-and-issues.md) khi phân loại fail, tìm pass giả, phản biện bản AI hoặc viết issue. Dùng [mẫu hồ sơ lỗi](assets/bug-report.md) cho một nhóm sai lệch.
-5. **Bàn giao.** Ghi expected, actual, số case, mốc chạy, phiên bản và liên kết evidence. Liệt kê case chưa chạy hoặc chưa tự động hóa với lý do. Giữ expected theo SRS khi sửa các test đang phát hiện lỗi SUT.
+1. **Thiết kế case.** Đọc [thiết kế và fixture](references/design-and-fixtures.md). Mỗi case có ID, nguồn expected, dữ liệu và kết quả quan sát được. Ghi lý do cho các điều kiện nằm ngoài phạm vi Web.
+2. **Viết hoặc sửa test.** Dùng mẫu của runner hiện có và xác minh thao tác qua UI. Đọc [Playwright](references/playwright-workflow.md) khi khảo sát DOM bằng CLI hoặc viết spec Playwright. Mỗi case chạy độc lập và có đường dọn dữ liệu do nó tạo.
+3. **Chạy.** Chạy một ca để kiểm fixture, locator và assertion rồi mở rộng theo ma trận của dự án. Đọc [thực thi và bằng chứng](references/execution-and-evidence.md) để kiểm danh sách case, dự án trình duyệt, lần thử lại và tệp báo cáo.
+4. **Review và phân loại.** Đọc [review và báo lỗi](references/review-and-issues.md). Truy mỗi failure tới bước và điều kiện thực thi. Kiểm các case có thể pass với assertion yếu. Khi báo lỗi, dùng [mẫu hồ sơ](assets/bug-report.md) để nối expected, actual, cách tái hiện và ảnh thật.
 
-## Các điểm phải giữ
+Khi chỉ thiết kế hoặc review, dùng nguồn và artifact được cung cấp. Khi được giao chạy, ghi nhận kết quả thực tế, phiên bản, thời điểm và nơi lưu bằng chứng. Chọn các đầu ra phù hợp với phạm vi người dùng giao.
 
-- Lấy expected từ SRS hoặc nguồn yêu cầu được chấp nhận. Ghi nguồn hoặc giả định. Mã SUT và response dùng để kiểm actual.
-- UUID, phiên trình duyệt riêng và DB thử giải quyết các lớp trạng thái khác nhau. Khi test thay đổi dữ liệu backend, xác minh rollback hoặc cleanup bằng đọc lại bản ghi.
-- Phân biệt lỗi runtime của script, môi trường, fixture và sai lệch SUT. Quy lỗi theo bước đã thực thi và bằng chứng quan sát được.
-- Ghi thời gian và người vận hành lệnh thực tế trong audit. Áp dụng nhãn MSSV cho báo cáo khi sinh viên chỉ định. Giữ lịch sử review, quyết định của sinh viên và bằng chứng thực thi.
-- Kiểm nội dung ảnh và attachment trước khi công khai. Trace thường chứa request, state và thông tin xác thực. Giữ bản debug cục bộ và sinh artifact có phạm vi phù hợp cho repo public.
-
-## Dùng ngay trong HW04
-
-- Bắt đầu ở test repo gồm `data/`, `tests/`, `docs/features/` và `scripts/run-matrix.mjs`. SUT là repo liền kề. Bản gốc backend seed lại SQLite mỗi lần khởi động, vì vậy dùng bản thử có thể bỏ đi.
-- Khi cần khảo sát UI, dùng Playwright CLI nếu đã có. Khi cần spec, assertions, ba browser và HTML report, dùng Playwright Test của repo. Dùng phiên cô lập theo quyền người dùng đã cấp.
-- Đọc [ví dụ hoàn chỉnh FR-09](references/worked-example-fr09.md) để xem đường đi từ SRS qua JSON, browser, nguyên nhân lỗi và video demo. Dùng [kịch bản đánh giá skill](evals/evals.json) khi kiểm chất lượng hướng dẫn.
+Xem [ví dụ FR-09 của EShop](references/worked-example-fr09.md) khi cần một ca hoàn chỉnh từ yêu cầu đến report và issue. Dùng [kịch bản đánh giá](evals/evals.json) để kiểm skill trên các dự án khác.

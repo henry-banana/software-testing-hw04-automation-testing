@@ -16,7 +16,7 @@ Bắt đầu ở [checklist công việc](TASKS.md). Xem [báo cáo chính](2312
 | `reports/` | HTML, kết quả JSON và bảng liên kết các lượt chạy |
 | [Hồ sơ lỗi theo FR](bugs/bug-reports.md) | Tám hồ sơ phân tích, biến thể, ảnh Playwright và issue HW04, kèm [mẫu issue](bugs/issue-template.md) |
 | `ai-audit/` | Khai báo, audit và critique |
-| [Agent Skill EShop Web Automation](.agents/skills/web-automation-testing/SKILL.md) | Thiết kế, Playwright, kiểm ma trận, mẫu báo cáo và ví dụ FR-09 |
+| [Agent Skill Web Automation Testing](.agents/skills/web-automation-testing/SKILL.md) | Thiết kế, Playwright, kiểm ma trận, mẫu báo cáo và ví dụ FR-09 |
 | `git-commit-log.txt` | Lịch sử commit xuất trước khi nộp |
 
 ## Cài và chạy

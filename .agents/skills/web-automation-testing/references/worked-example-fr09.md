@@ -1,6 +1,8 @@
-# Ví dụ hoàn chỉnh FR-09 và dàn ý demo
+# Ví dụ FR-09 của EShop và dàn ý demo
 
 FR-09 yêu cầu mã tồn tại và đang hoạt động, còn hạn, tổng đủ ngưỡng, khách đã đăng nhập và chưa dùng hết lượt. Tổng cuối bằng tổng trước giảm trừ khoản giảm. Oracle về tiền lấy từ SRS và dữ liệu JSON. [SRS EShop](https://github.com/ttbhanh/eshop-sut/blob/85af3ba875c88283615e22cb108f13e2fccaf0e9/README.md#fr-09-m%C3%A3-gi%E1%BA%A3m-gi%C3%A1-coupon)
+
+HW04 yêu cầu ít nhất 12 case và ba mẫu assertion cho mỗi feature, chạy trên ba trình duyệt và gắn MSSV vào báo cáo. Repo bài làm có runner, fixture SQLite và hồ sơ AI theo đề.
 
 ## Từ spec đến assertion
 
@@ -10,9 +12,11 @@ FR-09 yêu cầu mã tồn tại và đang hoạt động, còn hạn, tổng đ
 4. Lượt sau dùng 13 case trên mỗi browser. FR09-05 fail nhất quán, HTTP 400 và UI báo chưa đủ ngưỡng. Mã nguồn baseline dùng so sánh `>`. Đối chứng ở hai phía biên là FR09-04 và FR09-06.
 5. Ghi hồ sơ lỗi, ảnh Playwright, issue HW04 và hành vi hồi quy mong đợi.
 
-[Thiết kế FR-09](../../../../docs/features/fr09.md), [dữ liệu](../../../../data/fr09.json), [spec](../../../../tests/fr09/apply-coupon.spec.ts), [hồ sơ HW04-B02](../../../../bugs/FR09-B02.md), [issue HW04 #293](https://github.com/tkob-team/eshop-sut/issues/293)
+[Thiết kế FR-09](https://github.com/henry-banana/software-testing-hw04-automation-testing/blob/2a05f3d11c9f73f3603bc13d52611940516185cb/docs/features/fr09.md), [dữ liệu](https://github.com/henry-banana/software-testing-hw04-automation-testing/blob/2a05f3d11c9f73f3603bc13d52611940516185cb/data/fr09.json), [spec](https://github.com/henry-banana/software-testing-hw04-automation-testing/blob/2a05f3d11c9f73f3603bc13d52611940516185cb/tests/fr09/apply-coupon.spec.ts), [hồ sơ HW04-B02](https://github.com/henry-banana/software-testing-hw04-automation-testing/blob/2a05f3d11c9f73f3603bc13d52611940516185cb/bugs/FR09-B02.md), [issue HW04 #293](https://github.com/tkob-team/eshop-sut/issues/293)
 
 ## Chạy lại và kiểm báo cáo chính thức
+
+Chạy các lệnh dưới từ repo bài làm HW04, sau khi chuẩn bị EShop theo [README của bài làm](https://github.com/henry-banana/software-testing-hw04-automation-testing/blob/2a05f3d11c9f73f3603bc13d52611940516185cb/README.md).
 
 ```powershell
 $env:HW04_STUDENT_ID = '23120262'
@@ -22,7 +26,7 @@ $helper = '.agents/skills/web-automation-testing/scripts/verify_matrix.py'
 python $helper --mode official --student-id 23120262 --expect FR09=13 --batch reports/2026-11-17T06-10-22.403Z --scan-attachments
 ```
 
-Lệnh thứ nhất sinh một batch mới. Dùng đường dẫn batch mới để kiểm lần vừa chạy. Lệnh thứ hai trỏ vào artifact đã dùng trong bài. Kết quả được ghi nhận ở batch đó là 9 pass và 4 fail trên mỗi browser, tổng 39 lượt, 27 pass và 12 fail. Bốn TC fail là FR09-02, FR09-03, FR09-05 và FR09-09. [Bảng thực thi](../../../../reports/README.md)
+Lệnh thứ nhất sinh một batch mới. Dùng đường dẫn batch mới để kiểm lần vừa chạy. Lệnh thứ hai trỏ vào artifact đã dùng trong bài. Kết quả được ghi nhận ở batch đó là 9 pass và 4 fail trên mỗi browser, tổng 39 lượt, 27 pass và 12 fail. Bốn TC fail là FR09-02, FR09-03, FR09-05 và FR09-09. [Bảng thực thi](https://github.com/henry-banana/software-testing-hw04-automation-testing/blob/2a05f3d11c9f73f3603bc13d52611940516185cb/reports/README.md)
 
 ## Gợi ý quay demo Agent Skill
 

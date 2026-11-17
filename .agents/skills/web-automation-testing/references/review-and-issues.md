@@ -10,7 +10,7 @@
 | Pass vì kiểm sai tín hiệu hoặc có điều kiện khác che lỗi | Thêm assertion đúng ý định, thử làm lệch riêng kết quả cần kiểm trên bản tạm. |
 | Expected thiếu căn cứ | Ghi điểm chưa rõ hoặc giả định được duyệt, cập nhật oracle theo nguồn. |
 
-Kiểm cả pass và fail. Một test pass vẫn có thể chấp nhận tổng thanh toán sai, chặn submit vì ô khác hoặc bỏ qua hậu điều kiện. Một test fail có thể đang đòi popup cụ thể dù SRS chấp nhận lỗi inline. Khi cần chứng minh, thay đổi duy nhất tín hiệu đang bị bỏ sót trên bản tạm và so kết quả trước sau. Giữ chứng cứ thay đổi kiểm soát tách khỏi lỗi trên baseline.
+Kiểm cả pass và fail. Một test pass có thể bỏ sót dữ liệu không được lưu hoặc nhầm ô khác chặn submit với validation cần kiểm. Một test fail có thể đang đòi popup cụ thể dù SRS chấp nhận lỗi inline. Khi cần chứng minh, thay đổi duy nhất tín hiệu đang bị bỏ sót trên bản tạm và so kết quả trước sau. Giữ chứng cứ thay đổi kiểm soát tách khỏi lỗi trên baseline.
 
 ## Viết hồ sơ lỗi
 
@@ -23,4 +23,4 @@ Gộp các input có cùng hành vi và cùng hướng sửa trong một hồ s�
 
 ## Ghi quá trình AI và human review
 
-Lưu công cụ, thời gian, prompt và đầu ra thực. Nối phiên AI với test ID, commit, diff hoặc report. Ghi lý do AI bỏ sót, thay đổi đã làm và kết quả chạy lại. Phân biệt review của agent và của sinh viên. Với HW04, giữ riêng AI Audit Report và AI Critique theo đề. Giữ nội dung gốc của AI-03, AI-04, AI-05 khi điền. Dùng thời gian, vai trò và chữ ký từ người thực hiện.
+Lưu công cụ, thời gian, prompt và đầu ra thực. Nối phiên AI với test ID, commit, diff hoặc report. Ghi lý do AI bỏ sót, thay đổi đã làm và kết quả chạy lại. Ghi đúng vai trò của người review và công cụ hỗ trợ. Áp dụng mẫu audit của dự án khi có.

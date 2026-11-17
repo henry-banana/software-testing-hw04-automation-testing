@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from zipfile import ZipFile
 
-from verify_matrix import check_cell
+from verify_matrix import check_cell, main
 
 
 ACTOR = "Draft run by: Codex"
@@ -19,26 +19,27 @@ class VerifyMatrixTest(unittest.TestCase):
         self.folder = Path(temporary.name)
         (self.folder / "html" / "data").mkdir(parents=True)
 
-    def seed(self, *, actor=ACTOR, html_id="FR09-01", tried="failed", skip=False, html_shift=0, step=None):
+    def seed(self, *, actor=ACTOR, html_id="FR09-01", tried="failed", skip=False, html_shift=0,
+             step=None, feature="FR09", project="chromium"):
         outcome = "skipped" if skip else "unexpected"
         counts = dict(expected=0, unexpected=int(not skip), flaky=0, skipped=int(skip))
         raw = {
             "errors": [],
             "stats": {**counts, "startTime": "2026-11-17T00:00:00.000Z"},
             "suites": [{"suites": [{"specs": [{
-                "title": "FR09-01 verify coupon",
+                "title": f"{feature}-01 verify behavior",
                 "tests": [{
-                    "projectName": "chromium", "expectedStatus": "passed",
+                    "projectName": project, "expectedStatus": "passed",
                     "status": outcome, "results": [{"status": tried}],
                 }],
             }]}]}],
         }
         html = {
-            "projectNames": ["chromium"],
+            "projectNames": [project],
             "startTime": 1794873600000 + html_shift,
             "stats": {"total": 1, **counts},
-            "files": [{"tests": [{"title": f"{html_id} verify coupon", "outcome": outcome}]}],
-            "options": {"title": f"{actor} | 2026-11-17T00:00:00Z | FR09 | chromium"},
+            "files": [{"tests": [{"title": f"{html_id} verify behavior", "outcome": outcome}]}],
+            "options": {"title": f"{actor} | 2026-11-17T00:00:00Z | {feature} | {project}"},
         }
         (self.folder / "results.json").write_text(json.dumps(raw), encoding="utf-8")
         packed = io.BytesIO()
@@ -95,6 +96,19 @@ class VerifyMatrixTest(unittest.TestCase):
     def test_scans_step_titles_embedded_in_html(self):
         self.seed(step='Fill "HW04-00000000-0000-0000-0000-000000000000!Aa1"')
         self.assertEqual(self.check(scan=True)[2], ["fixture-password"])
+
+    def test_cli_accepts_non_course_label_and_custom_projects(self):
+        batch = self.folder
+        actor = "Run by: QA CI"
+        projects = ["desktop-chrome", "Mobile Safari"]
+        for project in projects:
+            self.folder = batch / "invites" / project
+            (self.folder / "html").mkdir(parents=True)
+            self.seed(actor=actor, html_id="INVITES-01", feature="INVITES", project=project)
+        self.assertEqual(main([
+            "--run-label", actor, "--projects", *projects, "--batch", str(batch),
+            "--expect", "INVITES=1", "--scan-attachments",
+        ]), 0)
 
 
 if __name__ == "__main__":

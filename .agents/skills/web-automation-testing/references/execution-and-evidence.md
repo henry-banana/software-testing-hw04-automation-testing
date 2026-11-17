@@ -1,41 +1,28 @@
-# Chạy và kiểm bằng chứng
+# Thực thi và bằng chứng
 
-## Preflight và lựa chọn lượt chạy
+## Chạy theo cấu hình dự án
 
-Xác nhận SHA SUT và spec, nguồn dữ liệu, môi trường, phần mềm và cổng đang phục vụ đúng bản thử. Runner HW04 dùng backend 3000, Web 5173 và Admin 5174. Vite cần Node theo engine của gói. SQLite có thể cần rebuild nếu npm chặn install script. Backend seed lại DB khi khởi động. Đọc hướng dẫn repo trước khi chạy ở máy khác.
+1. Lấy lệnh chạy, dự án trình duyệt, môi trường và fixture từ repo. Xác minh các dịch vụ phục vụ đúng phiên bản ứng dụng trước khi chạy.
+2. Chạy một ca hoặc một luồng trên một project trước. Khi ca đã tới assertion, chạy các project nằm trong phạm vi. Playwright project có thể đại diện cho trình duyệt, thiết bị hoặc cấu hình riêng. [Playwright Projects](https://playwright.dev/docs/test-projects)
+3. Với mỗi lượt, ghi lệnh, phiên bản ứng dụng và suite, môi trường, project và mốc thực thi. Phân loại pass, fail, skip, retry, flaky và gián đoạn theo reporter. Đọc lỗi từ test hoặc reporter để phân biệt assertion fail với setup fail.
+4. Mở báo cáo và đối chiếu số liệu với dữ liệu máy đọc. Đếm case duy nhất theo ID, lượt thực thi theo case và project. Ghi riêng giới hạn, như tập ID khác nhau do project có filters riêng.
 
-```powershell
-npm.cmd run test:list
-npm.cmd test -- --draft fr09 chromium
-npm.cmd test -- --draft
+## Helper kiểm HTML và JSON của Playwright
+
+`scripts/verify_matrix.py` dùng Python 3.10 trở lên. Dùng khi bộ báo cáo có một project trong mỗi thư mục `<batch>/<feature>/<project>/`, hai báo cáo `results.json` và `html/index.html`, và title theo mẫu `<run label> | <ISO UTC> | <FEATURE> | <project>`. ID case đứng đầu title test. Các project trong ma trận chạy cùng tập case, một lần mỗi case, kỳ vọng mặc định là pass. Nếu repo xuất báo cáo theo cấu trúc khác, dùng dữ liệu của reporter để đối chiếu theo bốn bước trên.
+
+Ví dụ chạy từ thư mục skill và dùng dữ liệu của một repo có feature `INVITES`.
+
+```sh
+python scripts/verify_matrix.py --run-label "Run by: QA CI" --projects desktop-chrome mobile-webkit --batch /path/to/run --expect INVITES=6 --scan-attachments
 ```
 
-Chạy một phạm vi hẹp để sửa lỗi script, rồi mở rộng ma trận sau review. Exit code 1 có thể là fail nghiệp vụ hoặc lỗi thực thi. Đọc lỗi từ JSON và kiểm bước Act, Assert đã tới đâu.
+Lặp `--expect FEATURE=COUNT` để kiểm nhiều feature. Dùng `--feature-batch FEATURE=PATH` nếu một feature có batch riêng. Các tùy chọn dựa trên MSSV và cấu hình cũ được minh họa trong [ví dụ HW04](worked-example-fr09.md).
 
-```powershell
-$env:HW04_STUDENT_ID = '23120262'
-$env:HW04_TEST_DB = (Resolve-Path '../eshop-sut/backend/database.sqlite').Path
-npm.cmd test
-```
+## Bằng chứng có thể chia sẻ
 
-## Kiểm cấu trúc ma trận
-
-Chạy helper từ test repo. Mỗi `--expect FEATURE=N` chọn feature và khai báo số case mỗi browser. Dùng `--feature-batch FEATURE=PATH` nếu một feature lấy từ batch chạy lại. Ví dụ dưới kiểm ba feature của lượt chính thức HW04.
-
-```powershell
-$helper = '.agents/skills/web-automation-testing/scripts/verify_matrix.py'
-$batch = 'reports/2026-11-17T06-10-22.403Z'
-python $helper --mode official --student-id 23120262 --batch $batch --expect FR04=14 --expect FR09=13 --expect FR17=15 --scan-attachments
-```
-
-Helper đọc `results.json` và metadata nhúng trong `html/index.html` theo reporter của HW04. Mỗi cặp phải có đủ case, đúng browser, đúng nhãn và thời gian ISO. Helper kiểm cùng tập ID giữa ba browser, số pass và fail, trạng thái skip, interruption hoặc global errors. Helper dành cho cấu hình hiện tại chạy một lần mỗi case, kỳ vọng mặc định là pass. Fail đã tới assertion vẫn được đếm và cần phân loại thủ công.
-
-Dùng `--mode official --student-id 23120262 --scan-attachments` với batch chính thức. `--scan-attachments` tìm một số chỉ dấu credential trong artifact văn bản và ZIP đính kèm. Nó ghi loại chỉ dấu và cặp report, giữ kín giá trị. Kết quả sạch theo mẫu máy vẫn cần review nội dung, đặc biệt ảnh và video. Việc title có MSSV xác nhận label trong file. Quyền và bằng chứng người chạy phải được ghi độc lập.
-
-## Đưa bằng chứng vào báo cáo
-
-- Ghi cặp feature và browser, SHA, thời gian ISO, người chạy, số case và nhóm kết quả. Phân biệt ID duy nhất và lượt kiểm.
-- Giữ ảnh lỗi, trạng thái trước sau và response rút gọn khi làm rõ. Kiểm ảnh đúng case. Dùng JSON assertion hoặc trace cục bộ để bổ sung khi screenshot chỉ chụp được hậu điều kiện.
-- Tạo bản công khai qua reporter với attachment có thể chia sẻ. Kiểm metadata và link ảnh sau khi xuất. Giữ trace có credential và state đăng nhập ở bản cục bộ. Kiểm cả chi tiết các bước nhập mật khẩu trong HTML. Runner HW04 che giá trị của mật khẩu fixture trong tiêu đề bước.
+- Lưu test ID, môi trường, expected, actual và ảnh gắn với đúng lần chạy. Dùng log hoặc phản hồi rút gọn để làm rõ điều ảnh chưa thể hiện.
+- Kiểm cả ảnh, báo cáo, chi tiết step và tệp đính kèm trước khi chia sẻ. Giữ trace, session và dữ liệu nhạy cảm ở nơi có quyền truy cập phù hợp. `--scan-attachments` báo một số dấu hiệu thông tin xác thực trong HTML, JSON và tệp đính kèm. Tiếp tục kiểm nội dung mà máy khó xác nhận, như dữ liệu hiển thị trong ảnh.
+- Ghi nhãn người chạy theo quy ước dự án và ghi công cụ thực thi trong báo cáo. Lưu thời gian thật từ runner.
 
 [Playwright HTML Reporter](https://playwright.dev/docs/test-reporters#html-reporter), [Playwright Trace Viewer](https://playwright.dev/docs/trace-viewer)

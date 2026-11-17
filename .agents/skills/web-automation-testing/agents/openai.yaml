@@ -1,4 +1,4 @@
 interface:
-  display_name: "EShop Web Automation"
-  short_description: "Thiết kế và kiểm chứng Web E2E với Playwright"
-  default_prompt: "Dùng $web-automation-testing để đưa một feature EShop từ SRS đến bộ case Playwright và bằng chứng thực thi."
+  display_name: "Web Automation Testing"
+  short_description: "Thiết kế, chạy và kiểm chứng kiểm thử Web E2E"
+  default_prompt: "Dùng $web-automation-testing để thiết kế, tự động hóa và kiểm chứng một luồng web theo yêu cầu và cấu hình của repo này."

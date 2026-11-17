@@ -2,22 +2,20 @@
 
 ## Chọn điều kiện cần kiểm
 
-1. Ghi scope Web khách hàng hoặc Web Admin, nguồn SRS và điều kiện cần quan sát. Khi kế thừa HW02 hoặc HW03, ghi ID cũ đã tìm thấy. Khi mở rộng, ghi nguồn thiết kế và điểm khác.
-2. Xác định miền hợp lệ, điều kiện loại, trạng thái ban đầu và hậu điều kiện. Giữ các điều kiện khác hợp lệ khi thay đổi một biên. Dùng bảng quyết định cho điều kiện kết hợp và thêm ca giao nhau khi có ý nghĩa.
-3. Kiểm khả năng đi qua UI. Ví dụ payload sửa role chỉ có qua API cần được ghi là case API hoặc giới hạn Web. Nếu UI gửi chuỗi rỗng, ghi đúng biến thể và phân biệt với thuộc tính bị bỏ khỏi request.
-4. Với HW04, chọn ít nhất 12 case mỗi feature theo phạm vi đề. Mỗi dòng JSON hoặc CSV chứa ID, trạng thái và dữ liệu có ý nghĩa với case, cùng expected biến đổi theo dòng. Chọn ba mẫu assertion trở lên có thể phân biệt các kết quả thật.
+1. Nêu vai trò, luồng Web, nguồn yêu cầu và hành vi quan sát được. Nối case đã có bằng ID. Ghi giả định nếu nguồn chưa xác định đủ expected.
+2. Dùng phân lớp tương đương, giá trị biên, bảng quyết định hoặc chuyển trạng thái khi phù hợp. Khi kiểm một biên, giữ các dữ kiện còn lại ở giá trị hợp lệ. Thêm ca tổ hợp khi tương tác giữa điều kiện có thể làm đổi kết quả.
+3. Dùng UI cho hành vi người dùng trong phạm vi. Ghi riêng ca cần truy cập trực tiếp API, như thuộc tính bị thiếu trong payload mà form luôn gửi.
+4. Lưu ca biến thể bằng JSON, CSV hoặc nguồn dữ liệu repo đang dùng. Mỗi dòng chứa ID, điều kiện, input và expected riêng. Chọn assertion có thể bắt được hành vi sai, như trạng thái hiển thị, thay đổi dữ liệu sau tải lại hoặc giá trị tính toán.
 
-## Chọn fixture theo trạng thái
+## Cô lập trạng thái
 
 | Trạng thái | Cách chuẩn bị | Cách xác nhận |
 | --- | --- | --- |
-| Hồ sơ và vai trò | Dùng account thử riêng, đặt giá trị ban đầu có thể phân biệt với giá trị mới | Quan sát đúng người dùng và giá trị cũ trước thao tác |
-| Giỏ hàng và coupon | Đặt tổng trước giảm, loại mã, ngày hết hạn và lượt dùng theo dữ liệu case | Xác nhận tổng trước khi áp mã, dùng mã riêng hoặc mã seed đã đối chiếu |
-| Admin coupon | Chuẩn bị phiên đúng vai trò và bản ghi cần xem, xóa hoặc kiểm trùng | Định vị dòng theo mã, kiểm trường đích và dùng bản ghi đối chứng khi cần |
-| Thời gian | Dùng mốc chắc chắn đã hết hạn hoặc còn hạn. Nếu cần đúng thời điểm, điều khiển đồng hồ của thành phần thực sự tính hạn | Ghi múi giờ và mốc backend để xác nhận biên đã chọn |
+| Phiên và quyền | Dùng tài khoản thử riêng theo từng vai trò. Tạo context trình duyệt phù hợp | Kiểm danh tính hoặc quyền trước thao tác |
+| Bản ghi có sẵn | Tạo dữ liệu với khóa duy nhất và giá trị ban đầu nhận biết được | Đọc đúng bản ghi trước khi sửa, xóa hay kiểm trùng |
+| Trạng thái qua nhiều miền | Xác định dịch vụ tạo, đọc và cập nhật dữ liệu | Kiểm điều kiện ở UI hoặc API có thẩm quyền cho dữ liệu đó |
+| Thời gian | Chọn mốc ổn định. Khi kiểm biên chính xác, điều khiển đồng hồ của thành phần tính thời hạn | Ghi mốc và múi giờ chi phối expected |
 
-API dùng để Arrange, đọc lại hậu điều kiện và dọn test data. Dùng UI cho hành vi đang kiểm. Giữ mỗi case tự đủ khi chạy riêng hoặc đổi trình duyệt. Browser context cô lập session client. Cơ sở dữ liệu thử vẫn cần cleanup riêng, gồm bảng phụ như `coupon_usage`. Khi một API không thể dọn an toàn, dùng DB riêng có thể hoàn nguyên và xác minh trước và sau run. [Playwright fixtures](https://playwright.dev/docs/test-fixtures), [Playwright parameterization](https://playwright.dev/docs/test-parameterize)
+API có thể dùng để chuẩn bị, đọc hậu điều kiện và dọn test data. Context trình duyệt cô lập phiên phía client. Các bản ghi phía server cần được tách theo case hoặc worker và dọn bằng khóa của fixture. Nếu cách dọn thông thường đụng tới dữ liệu khác, dùng môi trường thử có thể hoàn nguyên và kiểm trạng thái sau chạy. [Playwright fixtures](https://playwright.dev/docs/test-fixtures), [Playwright parameterization](https://playwright.dev/docs/test-parameterize)
 
-## Đầu ra tối thiểu
-
-Hồ sơ feature nêu SRS, thiết kế, biên được chọn, case chưa tự động hóa, route UI, dữ liệu, assertions, cleanup và cách truy từ case qua report. Bản thiết kế chưa chạy ghi expected và trạng thái chưa chạy.
+Dùng [mẫu kế hoạch](../assets/feature-plan.md) để ghi điều kiện, dữ liệu, thao tác, expected, assertion và kết quả. Ghi trạng thái chưa chạy cho thiết kế chưa thực thi.
