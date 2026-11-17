@@ -1,91 +1,113 @@
-[
-  {
-    "id": "FR04-01",
-    "title": "Guest cannot view profile",
-    "kind": "guest"
+{
+  "baseline": {
+    "name": "Hồ sơ HW04 ban đầu",
+    "phone": "0901234567",
+    "address": "Địa chỉ thử ban đầu"
   },
-  {
-    "id": "FR04-02",
-    "title": "Email remains read-only",
-    "kind": "email"
-  },
-  {
-    "id": "FR04-03",
-    "title": "Accept ten-digit phone",
-    "kind": "update",
-    "phone": "0912345678",
-    "accepted": true
-  },
-  {
-    "id": "FR04-04",
-    "title": "Accept eleven-digit phone",
-    "kind": "update",
-    "phone": "09123456789",
-    "accepted": true
-  },
-  {
-    "id": "FR04-05",
-    "title": "Reject nine digits starting with zero",
-    "kind": "update",
-    "phone": "091234567",
-    "accepted": false
-  },
-  {
-    "id": "FR04-06",
-    "title": "Reject twelve digits starting with zero",
-    "kind": "update",
-    "phone": "091234567890",
-    "accepted": false
-  },
-  {
-    "id": "FR04-07",
-    "title": "Reject empty phone",
-    "kind": "update",
-    "phone": "",
-    "accepted": false
-  },
-  {
-    "id": "FR04-08",
-    "title": "Reject ten digits starting with one",
-    "kind": "update",
-    "phone": "1912345678",
-    "accepted": false
-  },
-  {
-    "id": "FR04-09",
-    "title": "Reject phone with a letter",
-    "kind": "update",
-    "phone": "091234567a",
-    "accepted": false
-  },
-  {
-    "id": "FR04-10",
-    "title": "Reject plus prefix",
-    "kind": "update",
-    "phone": "+091234567",
-    "accepted": false
-  },
-  {
-    "id": "FR04-11",
-    "title": "Reject embedded space",
-    "kind": "update",
-    "phone": "09123 5678",
-    "accepted": false
-  },
-  {
-    "id": "FR04-12",
-    "title": "Persist name and shipping address with a valid phone",
-    "kind": "update",
-    "phone": "0987654321",
-    "accepted": true,
-    "name": "Hồ sơ đã cập nhật",
-    "address": "Địa chỉ thử mới"
-  },
-  {
-    "id": "FR04-13",
-    "title": "Show separate profile data for two authenticated users",
-    "kind": "isolation",
-    "first": {"name": "Hồ sơ của A", "phone": "0901111111", "address": "Địa chỉ A"},
-    "second": {"name": "Hồ sơ của B", "phone": "0902222222", "address": "Địa chỉ B"}
-  }
-]
+  "cases": [
+    {
+      "id": "FR04-01",
+      "title": "Guest cannot view profile",
+      "kind": "guest"
+    },
+    {
+      "id": "FR04-02",
+      "title": "Email remains read-only",
+      "kind": "email"
+    },
+    {
+      "id": "FR04-03",
+      "title": "Accept ten-digit phone",
+      "kind": "update",
+      "phone": "0912345678",
+      "accepted": true
+    },
+    {
+      "id": "FR04-04",
+      "title": "Accept eleven-digit phone",
+      "kind": "update",
+      "phone": "09123456789",
+      "accepted": true
+    },
+    {
+      "id": "FR04-05",
+      "title": "Reject nine digits starting with zero",
+      "kind": "update",
+      "phone": "091234567",
+      "accepted": false
+    },
+    {
+      "id": "FR04-06",
+      "title": "Reject twelve digits starting with zero",
+      "kind": "update",
+      "phone": "091234567890",
+      "accepted": false
+    },
+    {
+      "id": "FR04-07",
+      "title": "Reject empty phone",
+      "kind": "update",
+      "phone": "",
+      "accepted": false
+    },
+    {
+      "id": "FR04-08",
+      "title": "Reject ten digits starting with one",
+      "kind": "update",
+      "phone": "1912345678",
+      "accepted": false
+    },
+    {
+      "id": "FR04-09",
+      "title": "Reject phone with a letter",
+      "kind": "update",
+      "phone": "091234567a",
+      "accepted": false
+    },
+    {
+      "id": "FR04-10",
+      "title": "Reject plus prefix",
+      "kind": "update",
+      "phone": "+091234567",
+      "accepted": false
+    },
+    {
+      "id": "FR04-11",
+      "title": "Reject embedded space",
+      "kind": "update",
+      "phone": "09123 5678",
+      "accepted": false
+    },
+    {
+      "id": "FR04-12",
+      "title": "Persist name and shipping address with a valid phone",
+      "kind": "update",
+      "phone": "0987654321",
+      "accepted": true,
+      "name": "Hồ sơ đã cập nhật",
+      "address": "Địa chỉ thử mới"
+    },
+    {
+      "id": "FR04-13",
+      "title": "Show separate profile data for two authenticated users",
+      "kind": "isolation",
+      "first": {
+        "name": "Hồ sơ của A",
+        "phone": "0901111111",
+        "address": "Địa chỉ A"
+      },
+      "second": {
+        "name": "Hồ sơ của B",
+        "phone": "0902222222",
+        "address": "Địa chỉ B"
+      }
+    },
+    {
+      "id": "FR04-14",
+      "title": "Reject nine digits with a nonzero prefix",
+      "kind": "update",
+      "phone": "191234567",
+      "accepted": false
+    }
+  ]
+}

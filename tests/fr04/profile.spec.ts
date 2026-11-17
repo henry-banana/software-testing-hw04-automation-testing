@@ -1,11 +1,7 @@
-import cases from '../../data/fr04.json';
+import profileData from '../../data/fr04.json';
 import { acceptDialog, expect, setBrowserSession, test } from '../support/eshop';
 
-const original = {
-  name: 'Hồ sơ HW04 ban đầu',
-  phone: '0901234567',
-  address: 'Địa chỉ thử ban đầu',
-};
+const { baseline: original, cases } = profileData;
 
 for (const row of cases) {
   test(`${row.id} ${row.title}`, async ({ baseURL, browser, page, sut }, testInfo) => {
