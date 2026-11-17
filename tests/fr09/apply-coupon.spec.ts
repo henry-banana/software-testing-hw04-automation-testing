@@ -19,7 +19,7 @@ for (const row of cases) {
         discount_value: data.amount,
         min_order_amount: data.min,
         max_uses_per_user: data.uses,
-        expired_at: data.expired ? '2000-01-01' : '2099-12-31',
+        expired_at: data.expiry,
       });
       const usageAccount = row.otherUser ? await sut.account() : account;
       for (let count = 0; count < (row.used ?? 0); count++) {
@@ -62,8 +62,10 @@ for (const row of cases) {
     const final = page.getByText('Thành tiền:', { exact: false });
     if (row.expected) {
       expect.soft(reply.ok()).toBe(true);
-      await expect.soft(savings).toHaveText(`Tiết kiệm: ${vnd(row.expected.discount)}`);
-      await expect.soft(final).toHaveText(`Thành tiền: ${vnd(row.expected.final)}`);
+      await Promise.all([
+        expect.soft(savings).toHaveText(`Tiết kiệm: ${vnd(row.expected.discount)}`),
+        expect.soft(final).toHaveText(`Thành tiền: ${vnd(row.expected.final)}`),
+      ]);
     } else {
       expect.soft(reply.ok()).toBe(false);
       if (row.error) await expect.soft(page.getByText(row.error, { exact: false })).toBeVisible();

@@ -9,7 +9,7 @@
       "amount": 50000,
       "min": 0,
       "uses": 2,
-      "expired": false
+      "expiry": "2099-12-31"
     },
     "expected": {
       "discount": 50000,
@@ -26,7 +26,7 @@
       "amount": 10,
       "min": 0,
       "uses": 2,
-      "expired": false
+      "expiry": "2099-12-31"
     },
     "expected": {
       "discount": 3000000,
@@ -43,7 +43,7 @@
       "amount": 100,
       "min": 0,
       "uses": 2,
-      "expired": false
+      "expiry": "2099-12-31"
     },
     "expected": {
       "discount": 30000000,
@@ -60,7 +60,7 @@
       "amount": 50000,
       "min": 30000001,
       "uses": 2,
-      "expired": false
+      "expiry": "2099-12-31"
     },
     "expected": null,
     "error": "chưa đủ giá trị tối thiểu"
@@ -75,7 +75,7 @@
       "amount": 50000,
       "min": 30000000,
       "uses": 2,
-      "expired": false
+      "expiry": "2099-12-31"
     },
     "expected": {
       "discount": 50000,
@@ -92,7 +92,7 @@
       "amount": 50000,
       "min": 29999999,
       "uses": 2,
-      "expired": false
+      "expiry": "2099-12-31"
     },
     "expected": {
       "discount": 50000,
@@ -118,7 +118,7 @@
       "amount": 50000,
       "min": 0,
       "uses": 2,
-      "expired": true
+      "expiry": "2000-01-01"
     },
     "expected": null,
     "error": "hết hạn"
@@ -133,7 +133,7 @@
       "amount": 50000,
       "min": 0,
       "uses": 2,
-      "expired": false
+      "expiry": "2099-12-31"
     },
     "expected": null,
     "used": 0,
@@ -149,7 +149,7 @@
       "amount": 50000,
       "min": 0,
       "uses": 2,
-      "expired": false
+      "expiry": "2099-12-31"
     },
     "expected": {
       "discount": 50000,
@@ -167,7 +167,7 @@
       "amount": 50000,
       "min": 0,
       "uses": 2,
-      "expired": false
+      "expiry": "2099-12-31"
     },
     "expected": null,
     "error": "đạt giới hạn",
@@ -183,7 +183,7 @@
       "amount": 50000,
       "min": 0,
       "uses": 2,
-      "expired": false
+      "expiry": "2099-12-31"
     },
     "expected": {
       "discount": 50000,
@@ -192,5 +192,21 @@
     "used": 2,
     "guest": false,
     "otherUser": true
+  },
+  {
+    "id": "FR09-13",
+    "title": "Reject coupon above the per-user limit",
+    "product": "iPhone 15 Pro Max",
+    "total": 30000000,
+    "coupon": {
+      "type": "fixed",
+      "amount": 50000,
+      "min": 0,
+      "uses": 2,
+      "expiry": "2099-12-31"
+    },
+    "expected": null,
+    "error": "đạt giới hạn",
+    "used": 3
   }
 ]
