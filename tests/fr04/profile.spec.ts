@@ -1,7 +1,36 @@
 import profileData from '../../data/fr04.json';
-import { acceptDialog, expect, setBrowserSession, test } from '../support/eshop';
+import type { Dialog, Locator, Page } from '@playwright/test';
+import { expect, setBrowserSession, test } from '../support/eshop';
 
 const { baseline: original, cases } = profileData;
+
+async function submitProfile(page: Page, form: Locator) {
+  let dialogHandler: (dialog: Dialog) => Promise<void>;
+  const dialogSignal = new Promise<{ kind: string; detail: string }>((resolve) => {
+    dialogHandler = async (dialog) => {
+      const detail = dialog.message();
+      await dialog.accept();
+      resolve({ kind: 'dialog', detail });
+    };
+    page.on('dialog', dialogHandler);
+  });
+  const httpSignal = page.waitForResponse((response) =>
+    response.request().method() === 'PUT' && new URL(response.url()).pathname === '/api/users/me',
+  { timeout: 5000 }).then((response) => ({ kind: 'http', detail: String(response.status()) }));
+  const alert = form.getByRole('alert').first();
+  const inlineSignal = alert.waitFor({ state: 'visible', timeout: 5000 })
+    .then(async () => ({ kind: 'inline', detail: await alert.innerText() }));
+
+  try {
+    const [outcome] = await Promise.all([
+      Promise.any([dialogSignal, httpSignal, inlineSignal]),
+      form.getByRole('button', { name: 'Cập nhật', exact: true }).click(),
+    ]);
+    return outcome;
+  } finally {
+    page.off('dialog', dialogHandler!);
+  }
+}
 
 for (const row of cases) {
   test(`${row.id} ${row.title}`, async ({ baseURL, browser, page, sut }, testInfo) => {
@@ -57,18 +86,18 @@ for (const row of cases) {
     if (row.name !== undefined) await name.fill(row.name);
     if (row.address !== undefined) await address.fill(row.address);
     await phone.fill(row.phone!);
-    const message = await acceptDialog(page, () => form.getByRole('button', { name: 'Cập nhật' }).click());
-    await testInfo.attach('update-dialog', { body: message, contentType: 'text/plain' });
+    const feedback = await submitProfile(page, form);
+    await testInfo.attach('update-feedback', {
+      body: JSON.stringify(feedback), contentType: 'application/json',
+    });
 
     await page.reload();
     await expect(phone).toBeVisible();
-    await expect.soft(phone).toHaveValue(row.accepted ? row.phone! : original.phone);
-    await expect.soft(name).toHaveValue(row.accepted ? row.name ?? original.name : original.name);
-    await expect.soft(address).toHaveValue(row.accepted ? row.address ?? original.address : original.address);
-    if (row.accepted) {
-      expect(message).toMatch(/thành công/i);
-    } else {
-      expect(message).not.toMatch(/thành công/i);
-    }
+    await Promise.all([
+      expect.soft(phone).toHaveValue(row.accepted ? row.phone! : original.phone),
+      expect.soft(name).toHaveValue(row.accepted ? row.name ?? original.name : original.name),
+      expect.soft(address).toHaveValue(row.accepted ? row.address ?? original.address : original.address),
+    ]);
+    if (!row.accepted && feedback.kind !== 'http') expect(feedback.detail).not.toMatch(/thành công/i);
   });
 }

@@ -60,18 +60,19 @@ for (const row of cases) {
 
     const savings = page.getByText('Tiết kiệm:', { exact: false });
     const final = page.getByText('Thành tiền:', { exact: false });
+    const paymentTotal = page.getByText('Tổng thanh toán:', { exact: false });
     if (row.expected) {
       expect.soft(reply.ok()).toBe(true);
       await Promise.all([
         expect.soft(savings).toHaveText(`Tiết kiệm: ${vnd(row.expected.discount)}`),
         expect.soft(final).toHaveText(`Thành tiền: ${vnd(row.expected.final)}`),
+        expect.soft(paymentTotal).toHaveText(`Tổng thanh toán: ${vnd(row.expected.final)}`),
       ]);
     } else {
       expect.soft(reply.ok()).toBe(false);
       if (row.error) await expect.soft(page.getByText(row.error, { exact: false })).toBeVisible();
       await expect.soft(savings).toHaveCount(0);
-      await expect.soft(page.getByText('Tổng thanh toán:', { exact: false }))
-        .toHaveText(`Tổng thanh toán: ${vnd(row.total)}`);
+      await expect.soft(paymentTotal).toHaveText(`Tổng thanh toán: ${vnd(row.total)}`);
     }
   });
 }

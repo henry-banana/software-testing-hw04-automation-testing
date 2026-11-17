@@ -89,19 +89,34 @@ for (const row of cases) {
     page.on('dialog', (dialog) => dialog.dismiss());
     const form = page.locator('form').filter({ has: page.getByRole('button', { name: 'Tạo mã' }) });
     const codeInput = form.getByPlaceholder('Mã coupon (VD: SAVE10)', { exact: true });
-    await codeInput.fill(formData.blankCode ? '' : code);
+    const fields = {
+      code: codeInput,
+      discount: form.getByPlaceholder(/Giá trị %|Số tiền/),
+      minimum: form.getByPlaceholder('Đơn tối thiểu (₫)', { exact: true }),
+      expiry: form.getByPlaceholder('Ngày hết hạn', { exact: true }),
+      uses: form.getByPlaceholder('Số lần dùng tối đa/người', { exact: true }),
+    };
+    const submittedCode = formData.blankCode ? '' : code;
+    const previous = await sut.coupons(submittedCode);
+    await codeInput.fill(submittedCode);
     await form.getByRole('combobox').selectOption(formData.type);
-    await form.getByPlaceholder(/Giá trị %|Số tiền/).fill(formData.discount);
-    await form.getByPlaceholder('Đơn tối thiểu (₫)', { exact: true }).fill(formData.min);
-    await form.getByPlaceholder('Ngày hết hạn', { exact: true }).fill(formData.expiry);
-    await form.getByPlaceholder('Số lần dùng tối đa/người', { exact: true }).fill(formData.uses);
+    await fields.discount.fill(formData.discount);
+    await fields.minimum.fill(formData.min);
+    await fields.expiry.fill(formData.expiry);
+    await fields.uses.fill(formData.uses);
 
     const submit = form.getByRole('button', { name: 'Tạo mã', exact: true });
     const blocksLocally = await form.evaluate((element) => element.matches(':invalid'));
     if (blocksLocally) {
       await submit.click();
       expect(row.allowed, 'Native validation blocked a valid case').toBe(false);
-      expect(await sut.coupons(code)).toHaveLength(0);
+      const field = row.invalidField as keyof typeof fields | undefined;
+      expect(field, 'Native validation is unrelated to the selected rejection').toBeDefined();
+      expect(
+        await fields[field!].evaluate((element: HTMLInputElement) => element.validity.valid),
+        `Native validation must reject the ${field} field`,
+      ).toBe(false);
+      expect(await sut.coupons(submittedCode)).toEqual(previous);
       return;
     }
     const [reply] = await Promise.all([
@@ -112,7 +127,11 @@ for (const row of cases) {
     await testInfo.attach('creation-response', {
       body: `HTTP ${reply.status()}\n${await reply.text()}`, contentType: 'text/plain',
     });
-    const rows = await sut.coupons(code);
+    const rows = await sut.coupons(submittedCode);
+    if (submittedCode === '') {
+      const previousIds = new Set(previous.map((row) => row.id));
+      sut.trackCoupons(rows.filter((row) => !previousIds.has(row.id)).map((row) => row.id));
+    }
     expect.soft(reply.ok()).toBe(row.allowed);
     if (row.allowed) {
       expect(rows).toMatchObject([coupon]);
@@ -121,14 +140,14 @@ for (const row of cases) {
       expect(rows).toMatchObject([original]);
       await expect(couponRow(page, code)).toHaveCount(1);
     } else {
-      if (rows.length) {
-        const unexpectedRow = couponRow(page, code);
+      if (rows.length > previous.length) {
+        const unexpectedRow = couponRow(page, submittedCode);
         await unexpectedRow.scrollIntoViewIfNeeded({ timeout: 3_000 });
         await testInfo.attach('unexpected-coupon-row', {
           body: await page.screenshot(), contentType: 'image/png',
         });
       }
-      expect(rows).toHaveLength(0);
+      expect(rows).toEqual(previous);
     }
   });
 }

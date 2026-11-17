@@ -19,7 +19,7 @@ export default defineConfig({
   use: {
     baseURL: process.env.ESHOP_WEB_URL || 'http://localhost:5173',
     screenshot: 'only-on-failure',
-    trace: 'retain-on-failure',
+    trace: process.env.HW04_PUBLIC_RUN === '1' ? 'off' : 'retain-on-failure',
   },
   projects: [
     { name: 'chromium', use: { browserName: 'chromium' } },

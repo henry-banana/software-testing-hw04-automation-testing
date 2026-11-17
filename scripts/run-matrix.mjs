@@ -34,6 +34,24 @@ const actor = draftRun ? 'Draft run by: Codex' : `Run by: ${studentId}`;
 const selectedFeatures = feature === 'all' ? features : [feature];
 const selectedBrowsers = browser === 'all' ? browsers : [browser];
 
+const endpoints = ['http://localhost:3000/api/products'];
+if (selectedFeatures.some((item) => item !== 'fr17')) {
+  endpoints.push(process.env.ESHOP_WEB_URL || 'http://localhost:5173');
+}
+if (selectedFeatures.includes('fr17')) endpoints.push('http://localhost:5174');
+try {
+  await Promise.all(endpoints.map(async (url) => {
+    const response = await fetch(url, { signal: AbortSignal.timeout(5000) });
+    if (!response.ok) throw new Error(`${url} returned HTTP ${response.status}`);
+  }));
+  if (selectedFeatures.includes('fr09') && !process.env.HW04_TEST_DB) {
+    throw new Error('Set HW04_TEST_DB to the SQLite file of the disposable EShop backend.');
+  }
+} catch (error) {
+  console.error('SUT preflight failed:', error.message, error.cause?.code || '');
+  process.exit(2);
+}
+
 for (const selectedFeature of selectedFeatures) {
   for (const selectedBrowser of selectedBrowsers) {
     const startedAt = new Date().toISOString();
@@ -59,6 +77,7 @@ for (const selectedFeature of selectedFeatures) {
           ...process.env,
           HW04_RUN_FOLDER: runFolder,
           HW04_RUN_TITLE: title,
+          HW04_PUBLIC_RUN: draftRun ? '0' : '1',
         },
       },
     );

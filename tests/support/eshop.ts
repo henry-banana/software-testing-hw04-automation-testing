@@ -1,4 +1,7 @@
 import { randomUUID } from 'node:crypto';
+import { realpathSync } from 'node:fs';
+import { basename, isAbsolute } from 'node:path';
+import { DatabaseSync } from 'node:sqlite';
 import { test as base, expect, type APIRequestContext, type APIResponse, type Page } from '@playwright/test';
 
 const api = 'http://localhost:3000';
@@ -55,6 +58,9 @@ export async function acceptDialog(page: Page, action: () => Promise<void>) {
 class EShopFixtures {
   private users: number[] = [];
   private couponCodes = new Set<string>();
+  private couponIds = new Set<number>();
+  private usages: { couponId: number; accountId: number }[] = [];
+  private usageDatabase?: string;
   private adminSession?: Promise<Session>;
 
   constructor(private request: APIRequestContext) {}
@@ -99,9 +105,33 @@ class EShopFixtures {
   }
 
   async recordUsage(account: Account, couponId: number) {
+    const configuredPath = process.env.HW04_TEST_DB;
+    if (!configuredPath || !isAbsolute(configuredPath)) {
+      throw new Error('HW04_TEST_DB must be the absolute path to the disposable SUT database.');
+    }
+    const path = realpathSync(configuredPath);
+    if (basename(path) !== 'database.sqlite') throw new Error('Expected the EShop database.sqlite fixture.');
+
+    const database = new DatabaseSync(path, { readOnly: true });
+    try {
+      const present = database.prepare(
+        'SELECT 1 FROM users, coupons WHERE users.id = ? AND users.email = ? AND coupons.id = ? AND coupons.code LIKE ?',
+      ).get(account.id, account.email, couponId, 'HW04-%');
+      if (!present) throw new Error('HW04_TEST_DB does not contain the current server fixture.');
+    } finally {
+      database.close();
+    }
+    this.usageDatabase = path;
+    if (!this.usages.some((usage) => usage.accountId === account.id && usage.couponId === couponId)) {
+      this.usages.push({ couponId, accountId: account.id });
+    }
     await checkedJson(await this.request.post(`${api}/api/coupon-usage`, {
       headers: authorize(account.token), data: { coupon_id: couponId },
     }), 'Seed coupon usage');
+  }
+
+  trackCoupons(ids: number[]) {
+    for (const id of ids) this.couponIds.add(id);
   }
 
   async coupons(code: string) {
@@ -114,14 +144,27 @@ class EShopFixtures {
   }
 
   async cleanup() {
-    if (!this.users.length && !this.couponCodes.size) return;
+    if (this.usageDatabase) {
+      const database = new DatabaseSync(this.usageDatabase);
+      try {
+        const remove = database.prepare('DELETE FROM coupon_usage WHERE coupon_id = ? AND user_id = ?');
+        const remaining = database.prepare('SELECT COUNT(*) AS count FROM coupon_usage WHERE coupon_id = ? AND user_id = ?');
+        for (const { couponId, accountId } of this.usages) {
+          remove.run(couponId, accountId);
+          expect(remaining.get(couponId, accountId)?.count).toBe(0);
+        }
+      } finally {
+        database.close();
+      }
+    }
+    if (!this.users.length && !this.couponCodes.size && !this.couponIds.size) return;
     const admin = await this.admin();
     const headers = authorize(admin.token);
-    if (this.couponCodes.size) {
+    if (this.couponCodes.size || this.couponIds.size) {
       const rows = await checkedJson<{ id: number; code: string }[]>(
         await this.request.get(`${api}/api/coupons`, { headers }), 'List coupons for cleanup',
       );
-      for (const row of rows.filter(({ code }) => this.couponCodes.has(code))) {
+      for (const row of rows.filter(({ code, id }) => this.couponCodes.has(code) || this.couponIds.has(id))) {
         await checkedJson(await this.request.delete(`${api}/api/admin/coupons/${row.id}`, { headers }),
           'Delete coupon fixture');
       }
