@@ -1,1 +1,196 @@
-[]
+[
+  {
+    "id": "FR09-01",
+    "title": "Apply fixed coupon",
+    "product": "iPhone 15 Pro Max",
+    "total": 30000000,
+    "coupon": {
+      "type": "fixed",
+      "amount": 50000,
+      "min": 0,
+      "uses": 2,
+      "expired": false
+    },
+    "expected": {
+      "discount": 50000,
+      "final": 29950000
+    }
+  },
+  {
+    "id": "FR09-02",
+    "title": "Compute ten percent discount",
+    "product": "iPhone 15 Pro Max",
+    "total": 30000000,
+    "coupon": {
+      "type": "percent",
+      "amount": 10,
+      "min": 0,
+      "uses": 2,
+      "expired": false
+    },
+    "expected": {
+      "discount": 3000000,
+      "final": 27000000
+    }
+  },
+  {
+    "id": "FR09-03",
+    "title": "Compute one hundred percent discount",
+    "product": "iPhone 15 Pro Max",
+    "total": 30000000,
+    "coupon": {
+      "type": "percent",
+      "amount": 100,
+      "min": 0,
+      "uses": 2,
+      "expired": false
+    },
+    "expected": {
+      "discount": 30000000,
+      "final": 0
+    }
+  },
+  {
+    "id": "FR09-04",
+    "title": "Reject total one dong below the coupon minimum",
+    "product": "iPhone 15 Pro Max",
+    "total": 30000000,
+    "coupon": {
+      "type": "fixed",
+      "amount": 50000,
+      "min": 30000001,
+      "uses": 2,
+      "expired": false
+    },
+    "expected": null,
+    "error": "chưa đủ giá trị tối thiểu"
+  },
+  {
+    "id": "FR09-05",
+    "title": "Accept total exactly at the coupon minimum",
+    "product": "iPhone 15 Pro Max",
+    "total": 30000000,
+    "coupon": {
+      "type": "fixed",
+      "amount": 50000,
+      "min": 30000000,
+      "uses": 2,
+      "expired": false
+    },
+    "expected": {
+      "discount": 50000,
+      "final": 29950000
+    }
+  },
+  {
+    "id": "FR09-06",
+    "title": "Accept total one dong above the coupon minimum",
+    "product": "iPhone 15 Pro Max",
+    "total": 30000000,
+    "coupon": {
+      "type": "fixed",
+      "amount": 50000,
+      "min": 29999999,
+      "uses": 2,
+      "expired": false
+    },
+    "expected": {
+      "discount": 50000,
+      "final": 29950000
+    }
+  },
+  {
+    "id": "FR09-07",
+    "title": "Reject a coupon code that does not exist",
+    "product": "iPhone 15 Pro Max",
+    "total": 30000000,
+    "coupon": null,
+    "expected": null,
+    "error": "không tồn tại"
+  },
+  {
+    "id": "FR09-08",
+    "title": "Reject an expired coupon",
+    "product": "iPhone 15 Pro Max",
+    "total": 30000000,
+    "coupon": {
+      "type": "fixed",
+      "amount": 50000,
+      "min": 0,
+      "uses": 2,
+      "expired": true
+    },
+    "expected": null,
+    "error": "hết hạn"
+  },
+  {
+    "id": "FR09-09",
+    "title": "Reject coupon application without authentication",
+    "product": "iPhone 15 Pro Max",
+    "total": 30000000,
+    "coupon": {
+      "type": "fixed",
+      "amount": 50000,
+      "min": 0,
+      "uses": 2,
+      "expired": false
+    },
+    "expected": null,
+    "used": 0,
+    "guest": true
+  },
+  {
+    "id": "FR09-10",
+    "title": "Accept coupon one use below the user limit",
+    "product": "iPhone 15 Pro Max",
+    "total": 30000000,
+    "coupon": {
+      "type": "fixed",
+      "amount": 50000,
+      "min": 0,
+      "uses": 2,
+      "expired": false
+    },
+    "expected": {
+      "discount": 50000,
+      "final": 29950000
+    },
+    "used": 1
+  },
+  {
+    "id": "FR09-11",
+    "title": "Reject coupon at the user limit",
+    "product": "iPhone 15 Pro Max",
+    "total": 30000000,
+    "coupon": {
+      "type": "fixed",
+      "amount": 50000,
+      "min": 0,
+      "uses": 2,
+      "expired": false
+    },
+    "expected": null,
+    "error": "đạt giới hạn",
+    "used": 2
+  },
+  {
+    "id": "FR09-12",
+    "title": "Another user reaching the limit does not consume this user allowance",
+    "product": "iPhone 15 Pro Max",
+    "total": 30000000,
+    "coupon": {
+      "type": "fixed",
+      "amount": 50000,
+      "min": 0,
+      "uses": 2,
+      "expired": false
+    },
+    "expected": {
+      "discount": 50000,
+      "final": 29950000
+    },
+    "used": 2,
+    "guest": false,
+    "otherUser": true
+  }
+]
