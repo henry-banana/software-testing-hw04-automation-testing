@@ -80,5 +80,12 @@
     "accepted": true,
     "name": "Hồ sơ đã cập nhật",
     "address": "Địa chỉ thử mới"
+  },
+  {
+    "id": "FR04-13",
+    "title": "Show separate profile data for two authenticated users",
+    "kind": "isolation",
+    "first": {"name": "Hồ sơ của A", "phone": "0901111111", "address": "Địa chỉ A"},
+    "second": {"name": "Hồ sơ của B", "phone": "0902222222", "address": "Địa chỉ B"}
   }
 ]

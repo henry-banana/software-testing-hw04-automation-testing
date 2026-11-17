@@ -8,12 +8,34 @@ const original = {
 };
 
 for (const row of cases) {
-  test(`${row.id} ${row.title}`, async ({ baseURL, page, sut }, testInfo) => {
+  test(`${row.id} ${row.title}`, async ({ baseURL, browser, page, sut }, testInfo) => {
     if (row.kind === 'guest') {
       await page.goto('/profile');
       await expect(page).toHaveURL(new URL('/profile', baseURL).href);
       await expect(page.getByText('Vui lòng đăng nhập', { exact: true })).toBeVisible();
       await expect(page.getByRole('button', { name: 'Cập nhật' })).toHaveCount(0);
+      return;
+    }
+
+    if (row.kind === 'isolation' && row.first && row.second) {
+      const accountA = await sut.account(row.first.name);
+      const accountB = await sut.account(row.second.name);
+      await sut.setProfile(accountA, row.first.name, row.first.phone, row.first.address);
+      await sut.setProfile(accountB, row.second.name, row.second.phone, row.second.address);
+      const contextB = await browser.newContext({ baseURL });
+      try {
+        const pageB = await contextB.newPage();
+        await setBrowserSession(page, 'token', accountA.token);
+        await setBrowserSession(pageB, 'token', accountB.token);
+        await page.goto('/profile');
+        await pageB.goto('/profile');
+        await expect(page.getByPlaceholder('VD: 0912345678')).toHaveValue(row.first.phone);
+        await expect(pageB.getByPlaceholder('VD: 0912345678')).toHaveValue(row.second.phone);
+        await expect(page.getByPlaceholder('Nhập địa chỉ của bạn')).toHaveValue(row.first.address);
+        await expect(pageB.getByPlaceholder('Nhập địa chỉ của bạn')).toHaveValue(row.second.address);
+      } finally {
+        await contextB.close();
+      }
       return;
     }
 
