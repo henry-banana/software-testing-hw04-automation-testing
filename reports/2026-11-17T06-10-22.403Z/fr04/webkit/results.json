@@ -1,0 +1,885 @@
+{
+  "config": {
+    "argv": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/fr04/",
+      "--project",
+      "webkit",
+      "--output",
+      "test-results\\2026-11-17T06-10-22.403Z\\fr04\\webkit"
+    ],
+    "configFile": "playwright.config.ts",
+    "rootDir": "tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "test-results/2026-11-17T06-10-22.403Z/fr04/webkit",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "test-results/2026-11-17T06-10-22.403Z/fr04/webkit",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "test-results/2026-11-17T06-10-22.403Z/fr04/webkit",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "test-results\\2026-11-17T06-10-22.403Z\\fr04\\webkit",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "tests",
+        "snapshotDir": "tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://localhost:5173",
+          "screenshot": "only-on-failure",
+          "trace": "off",
+          "browserName": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports\\2026-11-17T06-10-22.403Z\\fr04\\webkit\\html",
+          "open": "never",
+          "title": "Run by: 23120262 | 2026-11-17T06:12:17.556Z | FR04 | webkit"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports\\2026-11-17T06-10-22.403Z\\fr04\\webkit\\results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "fr04\\profile.spec.ts",
+      "file": "fr04/profile.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "FR04-01 Guest cannot view profile",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 502,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:18.305Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-553e80526fb4c6187063",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        },
+        {
+          "title": "FR04-02 Email remains read-only",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 542,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:18.940Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-a0ff7e74519d11120e84",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        },
+        {
+          "title": "FR04-03 Accept ten-digit phone",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5725,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"091234567\u001b[7m8\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"09\u001b[7m0\u001b[27m1234567\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"0901234567\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"0901234567\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"091234567\u001b[7m8\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"09\u001b[7m0\u001b[27m1234567\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"0901234567\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"0901234567\"\u001b[22m\n\n    at tests\\fr04\\profile.spec.ts:97:26",
+                    "location": {
+                      "file": "tests\\fr04\\profile.spec.ts",
+                      "column": 26,
+                      "line": 97
+                    },
+                    "snippet": " \u001b[90m  95 |\u001b[39m     \u001b[36mawait\u001b[39m expect(phone)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m  96 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(phone)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39mphone\u001b[33m!\u001b[39m \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39mphone)\u001b[33m,\u001b[39m\n \u001b[90m     |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(name)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39mname \u001b[33m??\u001b[39m original\u001b[33m.\u001b[39mname \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39mname)\u001b[33m,\u001b[39m\n \u001b[90m  99 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(address)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39maddress \u001b[33m??\u001b[39m original\u001b[33m.\u001b[39maddress \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39maddress)\u001b[33m,\u001b[39m\n \u001b[90m 100 |\u001b[39m     ])\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "tests\\fr04\\profile.spec.ts",
+                        "column": 26,
+                        "line": 97
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"091234567\u001b[7m8\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"09\u001b[7m0\u001b[27m1234567\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"0901234567\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"0901234567\"\u001b[22m\n\n\n   95 |     await expect(phone).toBeVisible();\n   96 |     await Promise.all([\n>  97 |       expect.soft(phone).toHaveValue(row.accepted ? row.phone! : original.phone),\n      |                          ^\n   98 |       expect.soft(name).toHaveValue(row.accepted ? row.name ?? original.name : original.name),\n   99 |       expect.soft(address).toHaveValue(row.accepted ? row.address ?? original.address : original.address),\n  100 |     ]);\n    at tests\\fr04\\profile.spec.ts:97:26"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:19.490Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "update-feedback",
+                      "contentType": "application/json",
+                      "body": "eyJraW5kIjoiZGlhbG9nIiwiZGV0YWlsIjoiU+G7kSDEkWnhu4duIHRob+G6oWkga2jDtG5nIGjhu6NwIGzhu4cuIFZ1aSBsw7JuZyBuaOG6rXAgxJHDum5nIDktMTAgY2jhu68gc+G7kS4ifQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "html/data/ad53816eee8d7a93ba1306406aee4dd8539b1a8f.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "html/data/3d40c6ec6d10380c8e2dbdc5c7bb0536c4802c99.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "tests\\fr04\\profile.spec.ts",
+                    "column": 26,
+                    "line": 97
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-c07744a5ae52f98e9d23",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        },
+        {
+          "title": "FR04-04 Accept eleven-digit phone",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5850,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"091234567\u001b[7m89\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"09\u001b[7m0\u001b[27m1234567\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"0901234567\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"0901234567\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"091234567\u001b[7m89\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"09\u001b[7m0\u001b[27m1234567\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"0901234567\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"0901234567\"\u001b[22m\n\n    at tests\\fr04\\profile.spec.ts:97:26",
+                    "location": {
+                      "file": "tests\\fr04\\profile.spec.ts",
+                      "column": 26,
+                      "line": 97
+                    },
+                    "snippet": " \u001b[90m  95 |\u001b[39m     \u001b[36mawait\u001b[39m expect(phone)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m  96 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(phone)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39mphone\u001b[33m!\u001b[39m \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39mphone)\u001b[33m,\u001b[39m\n \u001b[90m     |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(name)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39mname \u001b[33m??\u001b[39m original\u001b[33m.\u001b[39mname \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39mname)\u001b[33m,\u001b[39m\n \u001b[90m  99 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(address)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39maddress \u001b[33m??\u001b[39m original\u001b[33m.\u001b[39maddress \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39maddress)\u001b[33m,\u001b[39m\n \u001b[90m 100 |\u001b[39m     ])\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "tests\\fr04\\profile.spec.ts",
+                        "column": 26,
+                        "line": 97
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"091234567\u001b[7m89\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"09\u001b[7m0\u001b[27m1234567\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"0901234567\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"0901234567\"\u001b[22m\n\n\n   95 |     await expect(phone).toBeVisible();\n   96 |     await Promise.all([\n>  97 |       expect.soft(phone).toHaveValue(row.accepted ? row.phone! : original.phone),\n      |                          ^\n   98 |       expect.soft(name).toHaveValue(row.accepted ? row.name ?? original.name : original.name),\n   99 |       expect.soft(address).toHaveValue(row.accepted ? row.address ?? original.address : original.address),\n  100 |     ]);\n    at tests\\fr04\\profile.spec.ts:97:26"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:25.637Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "update-feedback",
+                      "contentType": "application/json",
+                      "body": "eyJraW5kIjoiZGlhbG9nIiwiZGV0YWlsIjoiU+G7kSDEkWnhu4duIHRob+G6oWkga2jDtG5nIGjhu6NwIGzhu4cuIFZ1aSBsw7JuZyBuaOG6rXAgxJHDum5nIDktMTAgY2jhu68gc+G7kS4ifQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "html/data/dd61d2ffa98ddd76e0fa6b3d7360230511dd09ec.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "html/data/75c7723b6b39c8da85626c0738477c6418ade6e7.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "tests\\fr04\\profile.spec.ts",
+                    "column": 26,
+                    "line": 97
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-7e6e71561dd0a88c6210",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        },
+        {
+          "title": "FR04-05 Reject nine digits starting with zero",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 828,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:31.898Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "update-feedback",
+                      "contentType": "application/json",
+                      "body": "eyJraW5kIjoiZGlhbG9nIiwiZGV0YWlsIjoiU+G7kSDEkWnhu4duIHRob+G6oWkga2jDtG5nIGjhu6NwIGzhu4cuIFZ1aSBsw7JuZyBuaOG6rXAgxJHDum5nIDktMTAgY2jhu68gc+G7kS4ifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-f8e48cfabb997b2f9209",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        },
+        {
+          "title": "FR04-06 Reject twelve digits starting with zero",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 820,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:32.793Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "update-feedback",
+                      "contentType": "application/json",
+                      "body": "eyJraW5kIjoiZGlhbG9nIiwiZGV0YWlsIjoiU+G7kSDEkWnhu4duIHRob+G6oWkga2jDtG5nIGjhu6NwIGzhu4cuIFZ1aSBsw7JuZyBuaOG6rXAgxJHDum5nIDktMTAgY2jhu68gc+G7kS4ifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-b365d9265e2524874c6a",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        },
+        {
+          "title": "FR04-07 Reject empty phone",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 771,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:33.622Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "update-feedback",
+                      "contentType": "application/json",
+                      "body": "eyJraW5kIjoiZGlhbG9nIiwiZGV0YWlsIjoiU+G7kSDEkWnhu4duIHRob+G6oWkga2jDtG5nIGjhu6NwIGzhu4cuIFZ1aSBsw7JuZyBuaOG6rXAgxJHDum5nIDktMTAgY2jhu68gc+G7kS4ifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-8450fa8906805ed391b0",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        },
+        {
+          "title": "FR04-08 Reject ten digits starting with one",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5700,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"\u001b[7m090\u001b[27m1234567\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m19\u001b[27m1234567\u001b[7m8\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"1912345678\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"1912345678\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"\u001b[7m090\u001b[27m1234567\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m19\u001b[27m1234567\u001b[7m8\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"1912345678\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"1912345678\"\u001b[22m\n\n    at tests\\fr04\\profile.spec.ts:97:26",
+                    "location": {
+                      "file": "tests\\fr04\\profile.spec.ts",
+                      "column": 26,
+                      "line": 97
+                    },
+                    "snippet": " \u001b[90m  95 |\u001b[39m     \u001b[36mawait\u001b[39m expect(phone)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m  96 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(phone)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39mphone\u001b[33m!\u001b[39m \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39mphone)\u001b[33m,\u001b[39m\n \u001b[90m     |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(name)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39mname \u001b[33m??\u001b[39m original\u001b[33m.\u001b[39mname \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39mname)\u001b[33m,\u001b[39m\n \u001b[90m  99 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(address)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39maddress \u001b[33m??\u001b[39m original\u001b[33m.\u001b[39maddress \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39maddress)\u001b[33m,\u001b[39m\n \u001b[90m 100 |\u001b[39m     ])\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "tests\\fr04\\profile.spec.ts",
+                        "column": 26,
+                        "line": 97
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"\u001b[7m090\u001b[27m1234567\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m19\u001b[27m1234567\u001b[7m8\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"1912345678\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"1912345678\"\u001b[22m\n\n\n   95 |     await expect(phone).toBeVisible();\n   96 |     await Promise.all([\n>  97 |       expect.soft(phone).toHaveValue(row.accepted ? row.phone! : original.phone),\n      |                          ^\n   98 |       expect.soft(name).toHaveValue(row.accepted ? row.name ?? original.name : original.name),\n   99 |       expect.soft(address).toHaveValue(row.accepted ? row.address ?? original.address : original.address),\n  100 |     ]);\n    at tests\\fr04\\profile.spec.ts:97:26"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:34.401Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "update-feedback",
+                      "contentType": "application/json",
+                      "body": "eyJraW5kIjoiaHR0cCIsImRldGFpbCI6IjIwMCJ9"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "html/data/909c6aca5026d48c945a4b3297bbbe174e0e90c9.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "html/data/1d68111aa1d711d6d557fce367f84b98d17017a6.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "tests\\fr04\\profile.spec.ts",
+                    "column": 26,
+                    "line": 97
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-68412c3a5b8cc37148a4",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        },
+        {
+          "title": "FR04-09 Reject phone with a letter",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 825,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:40.463Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "update-feedback",
+                      "contentType": "application/json",
+                      "body": "eyJraW5kIjoiZGlhbG9nIiwiZGV0YWlsIjoiU+G7kSDEkWnhu4duIHRob+G6oWkga2jDtG5nIGjhu6NwIGzhu4cuIFZ1aSBsw7JuZyBuaOG6rXAgxJHDum5nIDktMTAgY2jhu68gc+G7kS4ifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-f27ab8f4c7374cfeec24",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        },
+        {
+          "title": "FR04-10 Reject plus prefix",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 766,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:41.351Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "update-feedback",
+                      "contentType": "application/json",
+                      "body": "eyJraW5kIjoiZGlhbG9nIiwiZGV0YWlsIjoiU+G7kSDEkWnhu4duIHRob+G6oWkga2jDtG5nIGjhu6NwIGzhu4cuIFZ1aSBsw7JuZyBuaOG6rXAgxJHDum5nIDktMTAgY2jhu68gc+G7kS4ifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-9cab8fd12c53b6a7fe1e",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        },
+        {
+          "title": "FR04-11 Reject embedded space",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 822,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:42.125Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "update-feedback",
+                      "contentType": "application/json",
+                      "body": "eyJraW5kIjoiZGlhbG9nIiwiZGV0YWlsIjoiU+G7kSDEkWnhu4duIHRob+G6oWkga2jDtG5nIGjhu6NwIGzhu4cuIFZ1aSBsw7JuZyBuaOG6rXAgxJHDum5nIDktMTAgY2jhu68gc+G7kS4ifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-ad2a8cf0d7b36254da74",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        },
+        {
+          "title": "FR04-12 Persist name and shipping address with a valid phone",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5771,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"09\u001b[7m87654321\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"09\u001b[7m01234567\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"0901234567\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"0901234567\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"09\u001b[7m87654321\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"09\u001b[7m01234567\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"0901234567\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"0901234567\"\u001b[22m\n\n    at tests\\fr04\\profile.spec.ts:97:26",
+                    "location": {
+                      "file": "tests\\fr04\\profile.spec.ts",
+                      "column": 26,
+                      "line": 97
+                    },
+                    "snippet": " \u001b[90m  95 |\u001b[39m     \u001b[36mawait\u001b[39m expect(phone)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m  96 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(phone)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39mphone\u001b[33m!\u001b[39m \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39mphone)\u001b[33m,\u001b[39m\n \u001b[90m     |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(name)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39mname \u001b[33m??\u001b[39m original\u001b[33m.\u001b[39mname \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39mname)\u001b[33m,\u001b[39m\n \u001b[90m  99 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(address)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39maddress \u001b[33m??\u001b[39m original\u001b[33m.\u001b[39maddress \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39maddress)\u001b[33m,\u001b[39m\n \u001b[90m 100 |\u001b[39m     ])\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "tests\\fr04\\profile.spec.ts",
+                        "column": 26,
+                        "line": 97
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"09\u001b[7m87654321\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"09\u001b[7m01234567\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"0901234567\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"0901234567\"\u001b[22m\n\n\n   95 |     await expect(phone).toBeVisible();\n   96 |     await Promise.all([\n>  97 |       expect.soft(phone).toHaveValue(row.accepted ? row.phone! : original.phone),\n      |                          ^\n   98 |       expect.soft(name).toHaveValue(row.accepted ? row.name ?? original.name : original.name),\n   99 |       expect.soft(address).toHaveValue(row.accepted ? row.address ?? original.address : original.address),\n  100 |     ]);\n    at tests\\fr04\\profile.spec.ts:97:26"
+                    },
+                    {
+                      "location": {
+                        "file": "tests\\fr04\\profile.spec.ts",
+                        "column": 25,
+                        "line": 98
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).locator('div').filter({ has: getByText('Họ Tên', { exact: true }) }).getByRole('textbox')\nExpected: \u001b[32m\"Hồ sơ \u001b[7mđã cập nhật\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"Hồ sơ \u001b[7mHW04 ban đầu\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).locator('div').filter({ has: getByText('Họ Tên', { exact: true }) }).getByRole('textbox') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).locator('div').filter({ has: getByText('Họ Tên', { exact: true }) }).getByRole('textbox')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" required=\"\" type=\"text\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input required=\"\" type=\"text\" value=\"Hồ sơ HW04 ban đầu\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"Hồ sơ HW04 ban đầu\"\u001b[22m\n\n\n   96 |     await Promise.all([\n   97 |       expect.soft(phone).toHaveValue(row.accepted ? row.phone! : original.phone),\n>  98 |       expect.soft(name).toHaveValue(row.accepted ? row.name ?? original.name : original.name),\n      |                         ^\n   99 |       expect.soft(address).toHaveValue(row.accepted ? row.address ?? original.address : original.address),\n  100 |     ]);\n  101 |     if (!row.accepted && feedback.kind !== 'http') expect(feedback.detail).not.toMatch(/thành công/i);\n    at tests\\fr04\\profile.spec.ts:98:25"
+                    },
+                    {
+                      "location": {
+                        "file": "tests\\fr04\\profile.spec.ts",
+                        "column": 28,
+                        "line": 99
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('Nhập địa chỉ của bạn')\nExpected: \u001b[32m\"Địa chỉ thử \u001b[7mmới\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"Địa chỉ thử \u001b[7mban đầu\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('Nhập địa chỉ của bạn') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('Nhập địa chỉ của bạn')\u001b[22m\n\u001b[2m    - locator resolved to <textarea placeholder=\"Nhập địa chỉ của bạn\" class=\"w-full border p-2 rounded h-24\"></textarea>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <textarea placeholder=\"Nhập địa chỉ của bạn\" class=\"w-full border p-2 rounded h-24\">Địa chỉ thử ban đầu</textarea>\u001b[22m\n\u001b[2m       - unexpected value \"Địa chỉ thử ban đầu\"\u001b[22m\n\n\n   97 |       expect.soft(phone).toHaveValue(row.accepted ? row.phone! : original.phone),\n   98 |       expect.soft(name).toHaveValue(row.accepted ? row.name ?? original.name : original.name),\n>  99 |       expect.soft(address).toHaveValue(row.accepted ? row.address ?? original.address : original.address),\n      |                            ^\n  100 |     ]);\n  101 |     if (!row.accepted && feedback.kind !== 'http') expect(feedback.detail).not.toMatch(/thành công/i);\n  102 |   });\n    at tests\\fr04\\profile.spec.ts:99:28"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:42.956Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "update-feedback",
+                      "contentType": "application/json",
+                      "body": "eyJraW5kIjoiZGlhbG9nIiwiZGV0YWlsIjoiU+G7kSDEkWnhu4duIHRob+G6oWkga2jDtG5nIGjhu6NwIGzhu4cuIFZ1aSBsw7JuZyBuaOG6rXAgxJHDum5nIDktMTAgY2jhu68gc+G7kS4ifQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "html/data/9b74f3fd390b96102b46f74708746de91cd8eff3.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "html/data/48282d922843b66a640560355787df8016fd4998.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "tests\\fr04\\profile.spec.ts",
+                    "column": 26,
+                    "line": 97
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-f0088d6c303fce71a83b",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        },
+        {
+          "title": "FR04-13 Show separate profile data for two authenticated users",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 860,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:49.073Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-7203680a70348d613c64",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        },
+        {
+          "title": "FR04-14 Reject nine digits with a nonzero prefix",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5755,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"\u001b[7m090\u001b[27m1234567\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m19\u001b[27m1234567\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"191234567\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"191234567\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"\u001b[7m090\u001b[27m1234567\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m19\u001b[27m1234567\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"191234567\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"191234567\"\u001b[22m\n\n    at tests\\fr04\\profile.spec.ts:97:26",
+                    "location": {
+                      "file": "tests\\fr04\\profile.spec.ts",
+                      "column": 26,
+                      "line": 97
+                    },
+                    "snippet": " \u001b[90m  95 |\u001b[39m     \u001b[36mawait\u001b[39m expect(phone)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m  96 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(phone)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39mphone\u001b[33m!\u001b[39m \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39mphone)\u001b[33m,\u001b[39m\n \u001b[90m     |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(name)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39mname \u001b[33m??\u001b[39m original\u001b[33m.\u001b[39mname \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39mname)\u001b[33m,\u001b[39m\n \u001b[90m  99 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(address)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39maccepted \u001b[33m?\u001b[39m row\u001b[33m.\u001b[39maddress \u001b[33m??\u001b[39m original\u001b[33m.\u001b[39maddress \u001b[33m:\u001b[39m original\u001b[33m.\u001b[39maddress)\u001b[33m,\u001b[39m\n \u001b[90m 100 |\u001b[39m     ])\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "tests\\fr04\\profile.spec.ts",
+                        "column": 26,
+                        "line": 97
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\nExpected: \u001b[32m\"\u001b[7m090\u001b[27m1234567\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m19\u001b[27m1234567\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveValue\" locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('form').filter({ has: getByRole('button', { name: 'Cập nhật' }) }).getByPlaceholder('VD: 0912345678')\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"\" type=\"text\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m    - unexpected value \"\"\u001b[22m\n\u001b[2m    13 × locator resolved to <input type=\"text\" value=\"191234567\" placeholder=\"VD: 0912345678\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"191234567\"\u001b[22m\n\n\n   95 |     await expect(phone).toBeVisible();\n   96 |     await Promise.all([\n>  97 |       expect.soft(phone).toHaveValue(row.accepted ? row.phone! : original.phone),\n      |                          ^\n   98 |       expect.soft(name).toHaveValue(row.accepted ? row.name ?? original.name : original.name),\n   99 |       expect.soft(address).toHaveValue(row.accepted ? row.address ?? original.address : original.address),\n  100 |     ]);\n    at tests\\fr04\\profile.spec.ts:97:26"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T06:12:49.996Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "update-feedback",
+                      "contentType": "application/json",
+                      "body": "eyJraW5kIjoiaHR0cCIsImRldGFpbCI6IjIwMCJ9"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "html/data/ee2388cfbe77b72e43f7e3c5847350068314409d.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "html/data/86d307743caebb878c0bde42888c8f8e697c26a5.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "tests\\fr04\\profile.spec.ts",
+                    "column": 26,
+                    "line": 97
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4766f73ea39e85d16804-cbddaeffa09954ab8e33",
+          "file": "fr04/profile.spec.ts",
+          "line": 36,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-17T06:12:17.962Z",
+    "duration": 37853.918,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}
