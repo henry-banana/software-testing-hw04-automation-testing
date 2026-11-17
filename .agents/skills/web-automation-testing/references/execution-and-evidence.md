@@ -17,7 +17,7 @@ Ví dụ chạy từ thư mục skill và dùng dữ liệu của một repo có
 python scripts/verify_matrix.py --run-label "Run by: QA CI" --projects desktop-chrome mobile-webkit --batch /path/to/run --expect INVITES=6 --scan-attachments
 ```
 
-Lặp `--expect FEATURE=COUNT` để kiểm nhiều feature. Dùng `--feature-batch FEATURE=PATH` nếu một feature có batch riêng. Các tùy chọn dựa trên MSSV và cấu hình cũ được minh họa trong [ví dụ HW04](worked-example-fr09.md).
+Lặp `--expect FEATURE=COUNT` để kiểm nhiều feature. Dùng `--feature-batch FEATURE=PATH` nếu một feature có batch riêng. Khi dự án có định dạng thông tin xác thực riêng, truyền biểu thức chính quy bằng `--credential-pattern REGEX` cùng `--scan-attachments`. Helper chỉ ghi số thứ tự của mẫu khớp.
 
 ## Bằng chứng có thể chia sẻ
 

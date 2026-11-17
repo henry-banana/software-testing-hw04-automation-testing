@@ -32,4 +32,12 @@ Mở `html/index.html` từ bản clone hoặc ZIP đã giải nén. Giữ nguy�
 
 Playwright tạo báo cáo từ kết quả chạy trực tiếp. Runner đặt nhãn MSSV, thời gian ISO, browser và feature ở tiêu đề HTML. Trace tắt trong lượt công khai. Chi tiết bước FR17-13 trong ba HTML đã che mật khẩu thử. Báo cáo giữ nguyên verdict, thời gian và ảnh của lượt chạy. Sau lượt chạy, SQLite thử còn 0 lượt dùng coupon, 0 coupon có prefix HW04 và 0 tài khoản có prefix HW04.
 
+## Kiểm báo cáo HW04
+
+Chạy từ gốc repo HW04. Biểu thức chính quy nhận diện định dạng mật khẩu fixture do suite HW04 sinh.
+
+```powershell
+python .agents/skills/web-automation-testing/scripts/verify_matrix.py --run-label "Run by: 23120262" --batch reports/2026-11-17T06-10-22.403Z --expect FR04=14 --expect FR09=13 --expect FR17=15 --scan-attachments --credential-pattern 'HW04-[a-fA-F0-9-]{36}!Aa1'
+```
+
 [Hướng dẫn kiểm ma trận](../.agents/skills/web-automation-testing/references/execution-and-evidence.md)

@@ -3,13 +3,14 @@ import io
 import json
 import tempfile
 import unittest
+from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 from zipfile import ZipFile
 
 from verify_matrix import check_cell, main
 
 
-ACTOR = "Draft run by: Codex"
+ACTOR = "Run by: QA CI"
 
 
 class VerifyMatrixTest(unittest.TestCase):
@@ -19,8 +20,8 @@ class VerifyMatrixTest(unittest.TestCase):
         self.folder = Path(temporary.name)
         (self.folder / "html" / "data").mkdir(parents=True)
 
-    def seed(self, *, actor=ACTOR, html_id="FR09-01", tried="failed", skip=False, html_shift=0,
-             step=None, feature="FR09", project="chromium"):
+    def seed(self, *, actor=ACTOR, html_id="INVITES-01", tried="failed", skip=False, html_shift=0,
+             step=None, feature="INVITES", project="chromium"):
         outcome = "skipped" if skip else "unexpected"
         counts = dict(expected=0, unexpected=int(not skip), flaky=0, skipped=int(skip))
         raw = {
@@ -52,22 +53,22 @@ class VerifyMatrixTest(unittest.TestCase):
         (self.folder / "html" / "index.html").write_text(report, encoding="utf-8")
 
     def check(self, scan=False):
-        return check_cell(self.folder, "FR09", "chromium", 1, ACTOR, scan)
+        return check_cell(self.folder, "INVITES", "chromium", 1, ACTOR, scan)
 
     def test_completed_failure_counts(self):
         self.seed()
         cases, counts, markers = self.check()
-        self.assertEqual(cases, {"FR09-01"})
+        self.assertEqual(cases, {"INVITES-01"})
         self.assertEqual(counts["unexpected"], 1)
         self.assertFalse(markers)
 
     def test_rejects_actor_mismatch(self):
-        self.seed(actor="Run by: 00000000")
+        self.seed(actor="Run by: nightly CI")
         with self.assertRaisesRegex(ValueError, "actor"):
             self.check()
 
     def test_rejects_same_counts_from_different_cases(self):
-        self.seed(html_id="FR09-02")
+        self.seed(html_id="INVITES-02")
         with self.assertRaisesRegex(ValueError, "case IDs"):
             self.check()
 
@@ -93,9 +94,21 @@ class VerifyMatrixTest(unittest.TestCase):
             attachment.writestr("network.trace", '{"Authorization":"Bearer synthetic-no-secret-value"}')
         self.assertEqual(self.check(scan=True)[2], ["bearer"])
 
-    def test_scans_step_titles_embedded_in_html(self):
-        self.seed(step='Fill "HW04-00000000-0000-0000-0000-000000000000!Aa1"')
-        self.assertEqual(self.check(scan=True)[2], ["fixture-password"])
+    def test_custom_credential_pattern_scans_embedded_steps(self):
+        batch = self.folder
+        self.folder = batch / "invites" / "chromium"
+        (self.folder / "html").mkdir(parents=True)
+        self.seed(step='Fill "synthetic-credential-1234"')
+        stderr = io.StringIO()
+        with redirect_stdout(io.StringIO()), redirect_stderr(stderr):
+            status = main([
+                "--run-label", ACTOR, "--projects", "chromium", "--batch", str(batch),
+                "--expect", "INVITES=1", "--scan-attachments",
+                "--credential-pattern", r"synthetic-credential-\d+",
+            ])
+        self.assertEqual(status, 1)
+        self.assertIn("credential-pattern-1", stderr.getvalue())
+        self.assertNotIn("synthetic-credential-1234", stderr.getvalue())
 
     def test_cli_accepts_non_course_label_and_custom_projects(self):
         batch = self.folder
@@ -105,10 +118,12 @@ class VerifyMatrixTest(unittest.TestCase):
             self.folder = batch / "invites" / project
             (self.folder / "html").mkdir(parents=True)
             self.seed(actor=actor, html_id="INVITES-01", feature="INVITES", project=project)
-        self.assertEqual(main([
-            "--run-label", actor, "--projects", *projects, "--batch", str(batch),
-            "--expect", "INVITES=1", "--scan-attachments",
-        ]), 0)
+        with redirect_stdout(io.StringIO()):
+            status = main([
+                "--run-label", actor, "--projects", *projects, "--batch", str(batch),
+                "--expect", "INVITES=1", "--scan-attachments",
+            ])
+        self.assertEqual(status, 0)
 
 
 if __name__ == "__main__":

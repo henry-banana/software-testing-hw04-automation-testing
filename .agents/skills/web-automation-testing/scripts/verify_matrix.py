@@ -22,7 +22,6 @@ MARKERS = {
     "bearer": re.compile(rb"\bBearer\s+[A-Za-z0-9_.~-]{16,}", re.IGNORECASE),
     "jwt": re.compile(rb"\beyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\b"),
     "password-field": re.compile(rb'"(?:password|passwd)"\s*:\s*"[^"\\]{4,}"', re.IGNORECASE),
-    "fixture-password": re.compile(rb"HW04-[a-f0-9-]{36}!Aa1", re.IGNORECASE),
 }
 
 
@@ -39,8 +38,8 @@ def open_html_report(path):
     return ZipFile(io.BytesIO(base64.b64decode(match[1])))
 
 
-def credential_markers(content):
-    return {label for label, pattern in MARKERS.items() if pattern.search(content)}
+def credential_markers(content, patterns):
+    return {label for label, pattern in patterns.items() if pattern.search(content)}
 
 
 def check_title(title, feature, browser, actor):
@@ -53,7 +52,7 @@ def check_title(title, feature, browser, actor):
     datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
 
 
-def attachment_markers(folder):
+def attachment_markers(folder, patterns):
     files = (folder / "html" / "data").rglob("*")
     suspected = set()
     for path in files:
@@ -66,24 +65,24 @@ def attachment_markers(folder):
                     if not member.is_dir() and Path(member.filename).suffix.lower() not in {
                         ".png", ".jpg", ".jpeg", ".webp", ".mp4", ".webm",
                     }:
-                        suspected.update(credential_markers(archive.read(member)))
+                        suspected.update(credential_markers(archive.read(member), patterns))
         elif suffix in {".trace", ".network", ".json", ".txt", ".md", ".har", ".log"}:
-            suspected.update(credential_markers(path.read_bytes()))
+            suspected.update(credential_markers(path.read_bytes(), patterns))
     return suspected
 
 
-def check_cell(folder, feature, browser, expected_count, actor, scan):
+def check_cell(folder, feature, browser, expected_count, actor, scan, patterns=MARKERS):
     json_bytes = (folder / "results.json").read_bytes()
     raw = json.loads(json_bytes)
     issues = set()
     with open_html_report(folder / "html" / "index.html") as archive:
         html = json.loads(archive.read("report.json"))
         if scan:
-            issues.update(credential_markers(json_bytes))
+            issues.update(credential_markers(json_bytes, patterns))
             for member in archive.namelist():
                 if member.endswith(".json"):
-                    issues.update(credential_markers(archive.read(member)))
-            issues.update(attachment_markers(folder))
+                    issues.update(credential_markers(archive.read(member), patterns))
+            issues.update(attachment_markers(folder, patterns))
     check_title(html.get("options", {}).get("title"), feature, browser, actor)
     if html.get("projectNames") != [browser]:
         raise ValueError("HTML report project does not match the selected browser")
@@ -148,27 +147,28 @@ def parse_mapping(values, label, parser):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    label = parser.add_mutually_exclusive_group(required=True)
-    label.add_argument("--run-label", help="first segment of the report title")
-    label.add_argument("--mode", choices=("draft", "official"), help="legacy coursework labels")
-    parser.add_argument("--student-id", help="required for official mode")
+    parser.add_argument("--run-label", required=True, help="first segment of the report title")
     parser.add_argument("--projects", nargs="+", default=DEFAULT_PROJECTS, metavar="PROJECT")
     parser.add_argument("--batch", type=Path, required=True, help="default batch directory")
     parser.add_argument("--feature-batch", action="append", default=[], metavar="FEATURE=PATH")
     parser.add_argument("--expect", required=True, action="append", metavar="FEATURE=COUNT")
     parser.add_argument("--scan-attachments", action="store_true")
+    parser.add_argument(
+        "--credential-pattern", action="append", default=[], metavar="REGEX",
+        help="additional byte regex checked by --scan-attachments",
+    )
     args = parser.parse_args(argv)
 
-    if args.run_label is not None:
-        actor = args.run_label
-        if not actor.strip() or " | " in actor:
-            parser.error("--run-label must be a nonempty report title segment")
-    elif args.mode == "draft":
-        actor = "Draft run by: Codex"
-    else:
-        if not re.fullmatch(r"[0-9]{8}", args.student_id or ""):
-            parser.error("--mode official requires an eight-digit --student-id")
-        actor = f"Run by: {args.student_id}"
+    if not args.run_label.strip() or " | " in args.run_label:
+        parser.error("--run-label must be a nonempty report title segment")
+    if args.credential_pattern and not args.scan_attachments:
+        parser.error("--credential-pattern requires --scan-attachments")
+    patterns = MARKERS.copy()
+    for index, pattern in enumerate(args.credential_pattern, start=1):
+        try:
+            patterns[f"credential-pattern-{index}"] = re.compile(pattern.encode("utf-8"))
+        except re.error:
+            parser.error(f"--credential-pattern {index} is not a valid byte regex")
     if any(
         not project or project.endswith((".", " ")) or re.search(r'[\\/:*?"<>|\x00-\x1f]', project)
         for project in args.projects
@@ -191,7 +191,7 @@ def main(argv=None):
             folder = Path(batches.get(feature, args.batch)) / feature.lower() / browser
             try:
                 ids, stats, markers = check_cell(
-                    folder, feature, browser, int(count), actor, args.scan_attachments,
+                    folder, feature, browser, int(count), args.run_label, args.scan_attachments, patterns,
                 )
                 if reference_ids is None:
                     reference_ids = ids

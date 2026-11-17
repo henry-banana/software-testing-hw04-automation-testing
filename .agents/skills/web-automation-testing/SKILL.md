@@ -16,4 +16,4 @@ Xác định yêu cầu, hành vi cần kiểm, phiên bản ứng dụng, môi 
 
 Khi chỉ thiết kế hoặc review, dùng nguồn và artifact được cung cấp. Khi được giao chạy, ghi nhận kết quả thực tế, phiên bản, thời điểm và nơi lưu bằng chứng. Chọn các đầu ra phù hợp với phạm vi người dùng giao.
 
-Xem [ví dụ FR-09 của EShop](references/worked-example-fr09.md) khi cần một ca hoàn chỉnh từ yêu cầu đến report và issue. Dùng [kịch bản đánh giá](evals/evals.json) để kiểm skill trên các dự án khác.
+Dùng [kịch bản đánh giá](evals/evals.json) để kiểm cách skill xử lý các luồng web và cấu hình khác nhau.

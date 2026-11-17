@@ -15,7 +15,7 @@
 
 ## Dàn ý minh họa Agent Skill
 
-[Kịch bản FR-09](.agents/skills/web-automation-testing/references/worked-example-fr09.md) nối SRS, dữ liệu ca biên, diff review, ba browser và issue HW04 mới.
+[Kịch bản FR-09](docs/worked-example-fr09.md) nối SRS, dữ liệu ca biên, diff review, ba browser và issue HW04 mới.
 
 - Chọn một feature hoàn chỉnh.
 - Quay cách gọi skill, kiểm tra đầu ra, sửa script và chạy ra báo cáo.
