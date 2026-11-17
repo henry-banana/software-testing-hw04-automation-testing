@@ -30,6 +30,6 @@ Tổng 42 case và 126 lượt thực thi. Có 84 pass, 42 fail, 0 skip, 0 flaky
 
 Mở `html/index.html` từ bản clone hoặc ZIP đã giải nén. Giữ nguyên thư mục `html/data/` để mở ảnh, phản hồi và ngữ cảnh lỗi. `results.json` là kết quả máy đọc, với đường dẫn ảnh và tệp kèm tương đối từ thư mục của lượt chạy.
 
-Playwright tạo báo cáo từ kết quả chạy trực tiếp. Runner đặt nhãn MSSV, thời gian ISO, browser và feature ở tiêu đề HTML. Trace tắt trong lượt công khai. Sau lượt chạy, SQLite thử còn 0 lượt dùng coupon, 0 coupon có prefix HW04 và 0 tài khoản có prefix HW04.
+Playwright tạo báo cáo từ kết quả chạy trực tiếp. Runner đặt nhãn MSSV, thời gian ISO, browser và feature ở tiêu đề HTML. Trace tắt trong lượt công khai. Chi tiết bước FR17-13 trong ba HTML đã che mật khẩu thử. Báo cáo giữ nguyên verdict, thời gian và ảnh của lượt chạy. Sau lượt chạy, SQLite thử còn 0 lượt dùng coupon, 0 coupon có prefix HW04 và 0 tài khoản có prefix HW04.
 
 [Hướng dẫn kiểm ma trận](../.agents/skills/web-automation-testing/references/execution-and-evidence.md)

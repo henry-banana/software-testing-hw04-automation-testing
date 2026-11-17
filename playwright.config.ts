@@ -11,6 +11,7 @@ export default defineConfig({
   forbidOnly: true,
   reporter: runFolder
     ? [
+        ['./scripts/redact-fixture-passwords.ts'],
         ['line'],
         ['html', { outputFolder: join(runFolder, 'html'), open: 'never', title: runTitle }],
         ['json', { outputFile: join(runFolder, 'results.json') }],
