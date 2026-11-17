@@ -121,6 +121,13 @@ for (const row of cases) {
       expect(rows).toMatchObject([original]);
       await expect(couponRow(page, code)).toHaveCount(1);
     } else {
+      if (rows.length) {
+        const unexpectedRow = couponRow(page, code);
+        await unexpectedRow.scrollIntoViewIfNeeded({ timeout: 3_000 });
+        await testInfo.attach('unexpected-coupon-row', {
+          body: await page.screenshot(), contentType: 'image/png',
+        });
+      }
       expect(rows).toHaveLength(0);
     }
   });
