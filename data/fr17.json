@@ -36,7 +36,8 @@
       "min": "0",
       "expiry": "2099-12-31",
       "uses": "1"
-    }
+    },
+    "originalDiscount": 50000
   },
   {
     "id": "FR17-04",
@@ -162,5 +163,31 @@
     "kind": "regular",
     "allowed": false,
     "form": null
+  },
+  {
+    "id": "FR17-14",
+    "title": "Require minimum order amount",
+    "kind": "create",
+    "allowed": false,
+    "form": {
+      "type": "fixed",
+      "discount": "50000",
+      "min": "",
+      "expiry": "2099-12-31",
+      "uses": "1"
+    }
+  },
+  {
+    "id": "FR17-15",
+    "title": "Require maximum uses per user",
+    "kind": "create",
+    "allowed": false,
+    "form": {
+      "type": "fixed",
+      "discount": "50000",
+      "min": "0",
+      "expiry": "2099-12-31",
+      "uses": ""
+    }
   }
 ]

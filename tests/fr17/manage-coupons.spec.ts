@@ -63,7 +63,8 @@ for (const row of cases) {
     const coupon = couponData(code, formData);
     const admin = await sut.admin();
     if (row.kind === 'view' || row.kind === 'delete') await sut.coupon(coupon);
-    if (row.kind === 'duplicate') await sut.coupon({ ...coupon, discount_value: 50000 });
+    const original = row.kind === 'duplicate' ? { ...coupon, discount_value: row.originalDiscount! } : null;
+    if (original) await sut.coupon(original);
     await setBrowserSession(page, 'adminToken', admin.token);
     await openCoupons(page);
 
@@ -116,8 +117,8 @@ for (const row of cases) {
     if (row.allowed) {
       expect(rows).toMatchObject([coupon]);
       await checkRow(page, coupon);
-    } else if (row.kind === 'duplicate') {
-      expect(rows).toMatchObject([{ ...coupon, discount_value: 50000 }]);
+    } else if (original) {
+      expect(rows).toMatchObject([original]);
       await expect(couponRow(page, code)).toHaveCount(1);
     } else {
       expect(rows).toHaveLength(0);
