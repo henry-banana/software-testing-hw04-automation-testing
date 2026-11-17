@@ -1,5 +1,5 @@
 ---
-name: eshop-web-automation
+name: web-automation-testing
 description: Design, implement, review, or verify data-driven Playwright Web E2E tests for EShop user and admin features. Use for requirement-to-case mapping, fixture isolation, multi-browser HTML reports, and reproducible bug evidence for HW04 or a new Web feature.
 ---
 
@@ -20,7 +20,7 @@ Chọn bước theo đầu ra người dùng cần. Đọc đề và phiên bả
 - Lấy expected từ SRS hoặc nguồn yêu cầu được chấp nhận. Ghi nguồn hoặc giả định. Mã SUT và response dùng để kiểm actual.
 - UUID, phiên trình duyệt riêng và DB thử giải quyết các lớp trạng thái khác nhau. Khi test thay đổi dữ liệu backend, xác minh rollback hoặc cleanup bằng đọc lại bản ghi.
 - Phân biệt lỗi runtime của script, môi trường, fixture và sai lệch SUT. Quy lỗi theo bước đã thực thi và bằng chứng quan sát được.
-- Dùng thời gian và người chạy thực. Giữ run do agent thực hiện ở chế độ nháp. Sinh viên tự review, tự chạy report chính thức và tự ghi nhận phần mình thay đổi.
+- Ghi thời gian và người vận hành lệnh thực tế trong audit. Áp dụng nhãn MSSV cho báo cáo khi sinh viên chỉ định. Giữ lịch sử review, quyết định của sinh viên và bằng chứng thực thi.
 - Kiểm nội dung ảnh và attachment trước khi công khai. Trace thường chứa request, state và thông tin xác thực. Giữ bản debug cục bộ và sinh artifact có phạm vi phù hợp cho repo public.
 
 ## Dùng ngay trong HW04

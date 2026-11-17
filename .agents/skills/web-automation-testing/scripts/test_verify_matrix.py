@@ -19,7 +19,7 @@ class VerifyMatrixTest(unittest.TestCase):
         self.folder = Path(temporary.name)
         (self.folder / "html" / "data").mkdir(parents=True)
 
-    def seed(self, *, actor=ACTOR, html_id="FR09-01", tried="failed", skip=False, html_shift=0):
+    def seed(self, *, actor=ACTOR, html_id="FR09-01", tried="failed", skip=False, html_shift=0, step=None):
         outcome = "skipped" if skip else "unexpected"
         counts = dict(expected=0, unexpected=int(not skip), flaky=0, skipped=int(skip))
         raw = {
@@ -44,6 +44,8 @@ class VerifyMatrixTest(unittest.TestCase):
         packed = io.BytesIO()
         with ZipFile(packed, "w") as archive:
             archive.writestr("report.json", json.dumps(html))
+            if step is not None:
+                archive.writestr("step-details.json", json.dumps({"title": step}))
         payload = base64.b64encode(packed.getvalue()).decode("ascii")
         report = f'<template id="playwrightReportBase64">data:application/zip;base64,{payload}</template>'
         (self.folder / "html" / "index.html").write_text(report, encoding="utf-8")
@@ -89,6 +91,10 @@ class VerifyMatrixTest(unittest.TestCase):
         with ZipFile(path, "w") as attachment:
             attachment.writestr("network.trace", '{"Authorization":"Bearer synthetic-no-secret-value"}')
         self.assertEqual(self.check(scan=True)[2], ["bearer"])
+
+    def test_scans_step_titles_embedded_in_html(self):
+        self.seed(step='Fill "HW04-00000000-0000-0000-0000-000000000000!Aa1"')
+        self.assertEqual(self.check(scan=True)[2], ["fixture-password"])
 
 
 if __name__ == "__main__":

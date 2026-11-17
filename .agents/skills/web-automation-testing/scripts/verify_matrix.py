@@ -22,6 +22,7 @@ MARKERS = {
     "bearer": re.compile(rb"\bBearer\s+[A-Za-z0-9_.~-]{16,}", re.IGNORECASE),
     "jwt": re.compile(rb"\beyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\b"),
     "password-field": re.compile(rb'"(?:password|passwd)"\s*:\s*"[^"\\]{4,}"', re.IGNORECASE),
+    "fixture-password": re.compile(rb"HW04-[a-f0-9-]{36}!Aa1", re.IGNORECASE),
 }
 
 
@@ -31,12 +32,15 @@ def specs(suites):
         yield from specs(suite.get("suites", []))
 
 
-def read_html_summary(path):
+def open_html_report(path):
     match = REPORT_DATA.search(path.read_text(encoding="utf-8"))
     if not match:
         raise ValueError("expected the embedded Playwright HTML reporter archive")
-    with ZipFile(io.BytesIO(base64.b64decode(match[1]))) as archive:
-        return json.loads(archive.read("report.json"))
+    return ZipFile(io.BytesIO(base64.b64decode(match[1])))
+
+
+def credential_markers(content):
+    return {label for label, pattern in MARKERS.items() if pattern.search(content)}
 
 
 def check_title(title, feature, browser, actor):
@@ -62,17 +66,24 @@ def attachment_markers(folder):
                     if not member.is_dir() and Path(member.filename).suffix.lower() not in {
                         ".png", ".jpg", ".jpeg", ".webp", ".mp4", ".webm",
                     }:
-                        content = archive.read(member)
-                        suspected.update(label for label, pattern in MARKERS.items() if pattern.search(content))
+                        suspected.update(credential_markers(archive.read(member)))
         elif suffix in {".trace", ".network", ".json", ".txt", ".md", ".har", ".log"}:
-            content = path.read_bytes()
-            suspected.update(label for label, pattern in MARKERS.items() if pattern.search(content))
-    return sorted(suspected)
+            suspected.update(credential_markers(path.read_bytes()))
+    return suspected
 
 
 def check_cell(folder, feature, browser, expected_count, actor, scan):
-    raw = json.loads((folder / "results.json").read_text(encoding="utf-8"))
-    html = read_html_summary(folder / "html" / "index.html")
+    json_bytes = (folder / "results.json").read_bytes()
+    raw = json.loads(json_bytes)
+    issues = set()
+    with open_html_report(folder / "html" / "index.html") as archive:
+        html = json.loads(archive.read("report.json"))
+        if scan:
+            issues.update(credential_markers(json_bytes))
+            for member in archive.namelist():
+                if member.endswith(".json"):
+                    issues.update(credential_markers(archive.read(member)))
+            issues.update(attachment_markers(folder))
     check_title(html.get("options", {}).get("title"), feature, browser, actor)
     if html.get("projectNames") != [browser]:
         raise ValueError("HTML report project does not match the selected browser")
@@ -119,8 +130,7 @@ def check_cell(folder, feature, browser, expected_count, actor, scan):
     if len(html_tests) != expected_count or html_verdicts != verdicts:
         raise ValueError("case IDs or verdicts differ between HTML and JSON")
 
-    issues = attachment_markers(folder) if scan else []
-    return set(verdicts), counts, issues
+    return set(verdicts), counts, sorted(issues)
 
 
 def parse_mapping(values, label, parser):

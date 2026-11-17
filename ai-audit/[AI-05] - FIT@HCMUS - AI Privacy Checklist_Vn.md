@@ -12,13 +12,13 @@
 
 ## 1. Trước khi dùng AI
 
-- [ ] Đã xác nhận Cấp độ AI cho bài tập này.
+- [x] Đã xác nhận Cấp độ AI cho bài tập này.
 
 - [ ] Dùng tài khoản Claude Pro tự chọn (không phải tài khoản cá nhân).
 
 - [ ] Đã đọc Thoả thuận AI của môn học.
 
-- [ ] Hiểu rõ artifact nào KHÔNG được sinh bằng AI.
+- [x] Hiểu rõ artifact nào KHÔNG được sinh bằng AI.
 
 ## 2. Trong khi dùng AI
 
@@ -28,33 +28,35 @@
 
 - [ ] Không paste code công ty / code open-source giới hạn license.
 
-- [ ] Đã ghi mọi prompt + phản hồi AI vào prompt_log.md có timestamp.
+- [x] Đã ghi mọi prompt + phản hồi AI vào prompt_log.md có timestamp.
 
 ## 3. Trước khi nộp bài
 
-- [ ] Mọi artifact AI sinh đã được gắn tag trong AI Audit Report.
+- [x] Mọi artifact AI sinh đã được gắn tag trong AI Audit Report.
 
 - [ ] Mọi trích dẫn AI đã được xác minh (nguồn thực sự tồn tại).
 
-- [ ] Mọi code AI sinh đã được thực thi và test.
+- [x] Mọi code AI sinh đã được thực thi và test.
 
-- [ ] AI Critique 200–300 chữ đã có trong báo cáo.
+- [x] AI Critique 200–300 chữ đã có trong báo cáo.
 
-- [ ] Đoạn Mandatory Disclosure ở cuối báo cáo.
+- [x] Đoạn Mandatory Disclosure ở cuối báo cáo.
 
-- [ ] Đính kèm AI Use Disclosure Form.
+- [x] Đính kèm AI Use Disclosure Form.
 
 - [ ] Sẵn sàng cho vấn đáp ngẫu nhiên 5–7 phút tuần kế nộp bài.
 
 ## 4. Cam đoan Cuối cùng
 
+HW04 dùng OpenAI Codex. Mục Claude Pro áp dụng cho tài khoản Claude. Họ tên và MSSV xuất hiện trong hồ sơ tác giả. Fixture dùng tài khoản thử và địa chỉ tổng hợp. Trace công khai đã tắt và ảnh lấy từ lượt chạy thật. Nhật ký lời nhắc có thời gian UTC tại [prompt_log.md](prompt_log.md). [Khai báo đóng góp](AI-Audit-Report.md)
+
 *Trách nhiệm cuối cùng về độ chính xác, tính nguyên bản, và liêm chính của bài nộp này thuộc về tôi. Mọi việc dùng AI không khai báo đều bị coi là vi phạm liêm chính học thuật.*
 
 ## Chữ ký
 
-| Họ tên sinh viên (in hoa): |                                        |
+| Họ tên sinh viên (in hoa): | TỐNG DƯƠNG THÁI HÒA                     |
 |----------------------------|----------------------------------------|
-| MSSV:                      |                                        |
+| MSSV:                      | 23120262                               |
 | Lớp / Khoá:                |                                        |
 | Môn học:                   | CS423 / CSC13003 – Kiểm chứng Phần mềm |
 | Giảng viên:                |                                        |

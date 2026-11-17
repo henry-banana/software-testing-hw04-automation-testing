@@ -2,8 +2,8 @@
 
 | Video | Link YouTube Unlisted | Thời lượng | Feature |
 | --- | --- | --- | --- |
-| Task 2 | | | |
-| Minh họa Agent Skill | | | |
+| Task 2 | Chưa có link | Tối thiểu 5 phút | FR-09 |
+| Minh họa Agent Skill | Chưa có link | Theo video thực tế | FR-09 |
 
 ## Dàn ý Task 2
 
@@ -15,7 +15,7 @@
 
 ## Dàn ý minh họa Agent Skill
 
-[Kịch bản FR-09](.agents/skills/eshop-web-automation/references/worked-example-fr09.md) nối SRS, dữ liệu ca biên, diff review, ba browser và issue đã đối chiếu.
+[Kịch bản FR-09](.agents/skills/web-automation-testing/references/worked-example-fr09.md) nối SRS, dữ liệu ca biên, diff review, ba browser và issue HW04 mới.
 
 - Chọn một feature hoàn chỉnh.
 - Quay cách gọi skill, kiểm tra đầu ra, sửa script và chạy ra báo cáo.

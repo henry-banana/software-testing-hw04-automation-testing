@@ -1,6 +1,6 @@
 # Mẫu GitHub Issue HW04
 
-Tìm issue đã có theo mã FR và triệu chứng trước khi mở mới. Nếu cùng lỗi, ghi link issue cũ vào báo cáo lỗi và bổ sung bằng chứng HW04 vào issue đó khi cần. Mở issue mới tại [tkob-team/eshop-sut](https://github.com/tkob-team/eshop-sut/issues/new). Gắn nhãn `bug` nếu có quyền.
+Tìm theo mã FR và triệu chứng để tránh tạo trùng trong HW04. Ghi issue của bài trước làm tham chiếu khi liên quan. Tạo issue HW04 kèm bằng chứng của đợt Playwright này. Mở issue mới tại [tkob-team/eshop-sut](https://github.com/tkob-team/eshop-sut/issues/new). Gắn nhãn `bug` nếu có quyền.
 
 **Tiêu đề mẫu**
 
@@ -13,7 +13,7 @@ Tìm issue đã có theo mã FR và triệu chứng trước khi mở mới. N�
 ```markdown
 ## Thông tin
 
-- MSSV 23120262
+- Run by: 23120262
 - Mã bug và mã test case
 - SUT commit và commit script
 - Trình duyệt, phiên bản và thời điểm chạy
@@ -42,4 +42,4 @@ Ghi nội dung quan sát được, trạng thái sau thao tác và trình duyệ
 - Link HTML report và test case hoặc vị trí trong repo
 ```
 
-Sau khi đăng, mở lại issue để xác nhận ảnh hiển thị và lưu link cùng ảnh trang issue vào [bảng bằng chứng](../evidence/github-issues/README.md). Mẫu trong bài này dùng cùng kiểu tiêu đề đã có trong nhóm. [Issue HW04 của nphoang](https://github.com/tkob-team/eshop-sut/issues/275)
+Sau khi đăng, mở lại issue để xác nhận ảnh hiển thị và lưu link cùng ảnh trang issue vào [bảng bằng chứng](../evidence/github-issues/README.md). Mẫu trong bài này dùng cùng kiểu tiêu đề đã có trong nhóm. [Ví dụ HW04-B02](https://github.com/tkob-team/eshop-sut/issues/293)

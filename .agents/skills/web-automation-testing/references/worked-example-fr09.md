@@ -8,16 +8,18 @@ FR-09 yêu cầu mã tồn tại và đang hoạt động, còn hạn, tổng đ
 2. Arrange bằng API và fixture. Act bằng thao tác nhập và bấm Áp dụng mã trên Web Checkout. Kiểm tổng trước giảm và đồng bộ với POST áp mã. Expected từ SRS là bằng ngưỡng vẫn hợp lệ, giảm 50.000 VND, thành tiền 29.950.000 VND.
 3. Bản nháp FR-09 lần đầu có 12 TypeError vì tách method khỏi response. Commit `c714e08` giữ receiver. Chạy lại 12 case trên Chromium được 8 pass và 4 fail nghiệp vụ.
 4. Lượt sau dùng 13 case trên mỗi browser. FR09-05 fail nhất quán, HTTP 400 và UI báo chưa đủ ngưỡng. Mã nguồn baseline dùng so sánh `>`. Đối chứng ở hai phía biên là FR09-04 và FR09-06.
-5. Ghi hồ sơ lỗi, ảnh, issue đối chiếu và hành vi hồi quy mong đợi. Giữ báo cáo run chính thức tách từ kết quả nháp Codex.
+5. Ghi hồ sơ lỗi, ảnh Playwright, issue HW04 và hành vi hồi quy mong đợi.
 
-[Thiết kế FR-09](../../../../docs/features/fr09.md), [dữ liệu](../../../../data/fr09.json), [spec](../../../../tests/fr09/apply-coupon.spec.ts), [hồ sơ HW04-B02](../../../../bugs/FR09-B02.md), [issue ngưỡng #124](https://github.com/tkob-team/eshop-sut/issues/124)
+[Thiết kế FR-09](../../../../docs/features/fr09.md), [dữ liệu](../../../../data/fr09.json), [spec](../../../../tests/fr09/apply-coupon.spec.ts), [hồ sơ HW04-B02](../../../../bugs/FR09-B02.md), [issue HW04 #293](https://github.com/tkob-team/eshop-sut/issues/293)
 
-## Chạy lại và kiểm báo cáo nháp hiện có
+## Chạy lại và kiểm báo cáo chính thức
 
 ```powershell
-npm.cmd test -- --draft fr09
-$helper = '.agents/skills/eshop-web-automation/scripts/verify_matrix.py'
-python $helper --mode draft --expect FR09=13 --batch test-results/draft-reports/2026-11-17T04-21-14.649Z
+$env:HW04_STUDENT_ID = '23120262'
+$env:HW04_TEST_DB = (Resolve-Path '../eshop-sut/backend/database.sqlite').Path
+npm.cmd test -- fr09
+$helper = '.agents/skills/web-automation-testing/scripts/verify_matrix.py'
+python $helper --mode official --student-id 23120262 --expect FR09=13 --batch reports/2026-11-17T06-10-22.403Z --scan-attachments
 ```
 
 Lệnh thứ nhất sinh một batch mới. Dùng đường dẫn batch mới để kiểm lần vừa chạy. Lệnh thứ hai trỏ vào artifact đã dùng trong bài. Kết quả được ghi nhận ở batch đó là 9 pass và 4 fail trên mỗi browser, tổng 39 lượt, 27 pass và 12 fail. Bốn TC fail là FR09-02, FR09-03, FR09-05 và FR09-09. [Bảng thực thi](../../../../reports/README.md)
@@ -26,7 +28,7 @@ Lệnh thứ nhất sinh một batch mới. Dùng đường dẫn batch mới đ
 
 | Mốc gợi ý | Phần trình bày | Bằng chứng |
 | --- | --- | --- |
-| 0:00 đến 0:45 | Giới thiệu FR-09 và gọi `$eshop-web-automation` | Tên skill, người trình bày hoặc terminal |
+| 0:00 đến 0:45 | Giới thiệu FR-09 và gọi `$web-automation-testing` | Tên skill, người trình bày hoặc terminal |
 | 0:45 đến 2:00 | Mở SRS, nêu điều kiện và chọn cụm ba giá trị quanh ngưỡng | Hồ sơ và một dòng JSON |
 | 2:00 đến 3:20 | Review một điểm cụ thể, trình bày quyết định sửa của sinh viên | Diff và lý do gắn với đúng assertion |
 | 3:20 đến 4:40 | Chạy feature trên ba browser, mở một HTML rồi kiểm đủ ba report | Kết quả, MSSV, ISO timestamp và browser |

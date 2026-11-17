@@ -10,7 +10,7 @@
 
 Trình duyệt mới hoặc browser context mới cô lập dữ liệu phía trình duyệt. Hồ sơ, coupon và lượt sử dụng đã ghi ở backend cần fixture và cleanup riêng. Hai frontend trên baseline dùng phiên lưu theo origin. Giữ thông tin đăng nhập và file `storageState` ở môi trường cục bộ. [Playwright Authentication](https://playwright.dev/docs/auth), [SRS EShop](https://github.com/ttbhanh/eshop-sut/blob/85af3ba875c88283615e22cb108f13e2fccaf0e9/README.md)
 
-## Thứ tự chạy đề xuất
+## Quy trình chạy và xác minh
 
 1. Kiểm backend, Web và Admin đã mở theo [README](../README.md#cài-và-chạy). Ghi SHA của SUT. Xác minh tạo được phiên phù hợp và đọc lại được dữ liệu fixture.
 2. Chạy một feature trên Chromium sau khi có spec đầu tiên. Lưu lệnh, commit, case, report và nhận định từ lần chạy nháp vào hồ sơ feature. Xem những case fail và những case pass dù kiểm tra yếu.

@@ -1,0 +1,15 @@
+d1bf04e8657f467e417b5e6090240621097933af 2026-11-17T16:49:29+07:00 fix(test): mask disposable fixture passwords in public reports
+46b733600d11fb83a0e825bcd7aa2ddaeacf35f0 2026-11-17T13:18:59+07:00 test: publish reproducible student HW04 Playwright evidence
+d16d2b402eab2ce6834efdf850e83ab86d2849b1 2026-11-17T13:10:21+07:00 test: strengthen HW04 oracles and isolate public run artifacts
+baae7def9fe7e6caf567aed0fe12697d2238c040 2026-11-17T13:01:59+07:00 docs: add HW04 automation skill and detailed bug evidence
+d4be818cfcc0a079b770fc9f2f58c61382ddbdb8 2026-11-17T11:29:09+07:00 test: capture invalid coupon records in browser evidence
+5abf9f119b59e42f1ec104d3ee528c4f093a2e36 2026-11-17T11:21:13+07:00 test: extend coupon usage boundaries and declare expiry fixtures
+244d00620b4d80c2db19167bd564307d36e7001b 2026-11-17T11:20:44+07:00 test: cover missing coupon limits and parameterize duplicate data
+36e1015dc3b7dc0a2b75f90385c857101807e1d7 2026-11-17T11:20:24+07:00 test: externalize profile fixtures and cover the nine-digit boundary
+c714e0873ab780b7f8a69b78a7ada16cce7fe035 2026-11-17T11:19:50+07:00 fix(test): keep the checkout response receiver in assertions
+5ac6efaeb8e754e75a82efadf8b6fa1a96b6e07f 2026-11-17T11:19:18+07:00 test: verify profile isolation across signed-in users
+a5ec5854eec86b4613ac6681a3c39df6dcd031fe 2026-11-17T11:18:19+07:00 test: automate admin coupon creation listing and deletion
+35db7679495a065387e7402fd70c3e26b69da548 2026-11-17T11:18:19+07:00 test: automate coupon eligibility and checkout totals
+911fc6a50d9930024697614e3c0d068929d2bb19 2026-11-17T11:18:19+07:00 test: automate profile boundaries and persistence
+55e278960a312ab1f92231ca8cce02eb5ada773b 2026-11-17T11:09:36+07:00 chore: scaffold HW04 automation testing
+152f42d0b8bb2c1c673f5ab8047107b63d92dfad 2026-11-17T10:39:27+07:00 Initial commit

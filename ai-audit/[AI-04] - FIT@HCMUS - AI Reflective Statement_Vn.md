@@ -15,15 +15,17 @@
 | Mục                            | Giá trị                                |
 |--------------------------------|----------------------------------------|
 | Môn học:                       | CS423 / CSC13003 – Kiểm chứng Phần mềm |
-| Tên Project / Đồ án:           |                                        |
+| Tên Project / Đồ án:           | HW04 Automation Testing                |
 | Thành viên nhóm (nếu là nhóm): |                                        |
-| Họ tên sinh viên:              |                                        |
-| MSSV:                          |                                        |
+| Họ tên sinh viên:              | Tống Dương Thái Hòa                     |
+| MSSV:                          | 23120262                               |
 | Ngày nộp:                      |                                        |
 
 ## 2. Câu hỏi Suy ngẫm
 
 ### 1. AI đã hỗ trợ công việc của bạn như thế nào?
+
+Codex chuyển phạm vi HW02 thành bảng case Web và dữ liệu JSON, hỗ trợ 42 case, fixture, runner, báo cáo và skill. Playwright thực thi chín cặp feature và browser trên EShop cục bộ.
 
 *Mô tả cụ thể AI đóng góp ở đâu trong project: thiết kế test, brainstorm scenario, sinh code, phân tích log, triage defect, viết tài liệu, chuẩn bị slide, v.v.*
 
@@ -39,6 +41,8 @@
 
 ### 2. Bạn chấp nhận / từ chối / sửa gì từ đầu ra AI?
 
+Giữ Playwright Test, dữ liệu tách file và kiểm ba browser. Sửa cách gọi callback response, thêm kiểm dòng Tổng thanh toán, kiểm đúng trường Admin và đọc hậu điều kiện theo mã đã gửi. Chuyển các hồ sơ lỗi sang issue HW04 mới kèm ảnh từ batch chính thức theo yêu cầu của sinh viên.
+
 *Liệt kê đề xuất AI bạn dùng, đề xuất bạn loại bỏ, và cách bạn điều chỉnh cho phù hợp với spec, nguyên tắc ISTQB, hoặc phân tích của bạn.*
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
@@ -52,6 +56,8 @@
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 ### 3. Bạn nhận ra lỗi / bias / giới hạn nào trong đầu ra AI?
+
+Bản đầu FR-09 tách method làm hỏng callback. Một ca fixed có thể pass dù dòng tổng sai, và FR-17 có thể pass khi một ô khác chặn submit. Các probe dùng bản sao SUT để xác định lỗ hổng của phép kiểm.
 
 *Ví dụ cụ thể: AI bịa hàm, sai boundary, miss security case, hiểu sai metric (p95 vs top 5%), bịa trích dẫn, v.v.*
 
@@ -67,6 +73,8 @@
 
 ### 4. Bạn xác minh thông tin / nguồn / claim của AI như thế nào?
 
+Expected lấy từ SRS và case HW02. Actual lấy từ UI, phản hồi HTTP, dữ liệu lưu và 9 báo cáo chính thức. Đợt chạy có 84 pass, 42 fail và 14 case sai lệch tái hiện trên cả ba browser. [Ma trận](../reports/README.md)
+
 *Mô tả phương pháp xác minh (chạy test, kiểm tra spec, tra RFC, hỏi TA, đối chiếu công cụ khác, thực thi trên SUT thật).*
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
@@ -80,6 +88,8 @@
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 ### 5. Bạn học được điều gì qua project này mà nếu chỉ chấp nhận đầu ra AI thì sẽ không học được?
+
+Bài học từ FR09-01 là phải kiểm giá trị người dùng thực sự nhìn thấy ở dòng tổng. Với test đỏ, đọc bước fail và xác định thao tác đã tới SUT, rồi dùng SRS và bằng chứng runtime để phân loại lỗi. [AI Critique](AI-Critique.md)
 
 *Suy ngẫm về đóng góp trí tuệ của chính bạn. AI đã định hình (hay không) sự hiểu của bạn về testing như thế nào? Một nguyên tắc bạn sẽ giữ cho tương lai?*
 
@@ -103,7 +113,7 @@
 
 - [ ] Cấp 3 – AI cho phản hồi / chỉnh sửa
 
-- [ ] Cấp 4 – AI hỗ trợ sản xuất
+- [x] Cấp 4 – AI hỗ trợ sản xuất
 
 - [ ] Cấp 5 – AI là phương pháp cốt lõi
 
@@ -113,9 +123,9 @@
 
 ## Chữ ký
 
-| Họ tên sinh viên (in hoa): |                                        |
+| Họ tên sinh viên (in hoa): | TỐNG DƯƠNG THÁI HÒA                     |
 |----------------------------|----------------------------------------|
-| MSSV:                      |                                        |
+| MSSV:                      | 23120262                               |
 | Lớp / Khoá:                |                                        |
 | Môn học:                   | CS423 / CSC13003 – Kiểm chứng Phần mềm |
 | Giảng viên:                |                                        |
