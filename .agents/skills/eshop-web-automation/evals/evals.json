@@ -1,0 +1,47 @@
+{
+  "skill_name": "eshop-web-automation",
+  "suite_version": 1,
+  "evaluation_status": "Kịch bản kiểm hành vi của skill. Kiểm script và artifact thực được ghi riêng trong hồ sơ demo.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "Thiết kế từ biên ngưỡng coupon",
+      "prompt": "Thiết kế ba case quanh ngưỡng coupon fixed 300000 VND. Mã còn hạn, đang hoạt động, user đã đăng nhập và chưa dùng mã. Chỉ thiết kế, chưa có quyền chạy.",
+      "expectations": [
+        "Mô hình có 299999, 300000 và 300001 với expected từ điều kiện lớn hơn hoặc bằng.",
+        "Các điều kiện còn lại cố định và ba case được ghi chưa chạy.",
+        "Không sinh người chạy, timestamp report hay actual."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Phân loại lỗi trước và sau hiệu chỉnh",
+      "prompt": "Run đầu có TypeError trong callback Playwright ở 12 case FR-09. Sau sửa có 8 pass và 4 assertion fail. Hãy review cách ghi báo cáo.",
+      "expectations": [
+        "Run đầu được ghi là lỗi script.",
+        "Bốn fail sau sửa được đối chiếu actual với expected trước khi quy lỗi SUT.",
+        "Nêu mốc, test ID và commit sửa, phân biệt kết quả Codex và sinh viên."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Phát hiện test pass vì lý do không liên quan",
+      "prompt": "Ca từ chối coupon giảm 0 pass vì form invalid. Field khác có required và đang rỗng. Hãy review test.",
+      "expectations": [
+        "Chỉ ra form invalid không chứng minh field giảm bị chặn.",
+        "Đề xuất kiểm field đích và trạng thái lưu, giữ các field khác hợp lệ.",
+        "Giải thích cách kiểm lại bằng một thay đổi kiểm soát nhỏ."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Báo cáo công khai và duplicate",
+      "prompt": "Có report Chromium, Firefox, WebKit cho lượt Codex. Trace chứa JWT. Tìm thấy issue cùng quy tắc nhưng dùng request bỏ field, còn HW04 điền chuỗi rỗng trên UI. Hãy lập kế hoạch bàn giao.",
+      "expectations": [
+        "Chỉ ghi report là draft của Codex và giữ trace có JWT ở local.",
+        "Nêu chính xác khác biệt bỏ trường và chuỗi rỗng.",
+        "Ghi ảnh thực, thời gian và issue liên quan, không tuyên bố đã đăng."
+      ]
+    }
+  ]
+}

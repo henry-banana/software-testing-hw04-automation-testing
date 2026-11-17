@@ -19,14 +19,16 @@
 | B | FR-09 Áp dụng mã giảm giá ở Checkout | 12 | [FR-09](docs/features/fr09.md) |
 | C | FR-17 Thêm, xem và xóa mã giảm giá trên Admin | 12 | [FR-17](docs/features/fr17.md) |
 
-- [ ] Đọc SRS và case HW02. Chọn hoặc bổ sung ít nhất 12 case Web cho mỗi feature. Ghi ID, yêu cầu, nguồn case cũ nếu có, điều kiện đầu vào, expected và hậu điều kiện. Dùng ca dương, âm và biên phù hợp với mỗi feature.
+- [x] Đọc SRS và case HW02. Ghi thiết kế cho 42 case Web với ID, điều kiện đầu vào, expected và hậu điều kiện ở ba hồ sơ feature.
 - [ ] Chia phiên AI thành các bước phân tích yêu cầu, xác định dữ liệu, thiết kế assertions, sinh script và phân tích lượt chạy nháp. Lưu ngày giờ, tên công cụ, prompt và đầu ra cho từng tương tác.
-- [ ] Điền JSON riêng theo feature. Mỗi case có ID ổn định để truy từ log, HTML và issue về thiết kế. Dữ liệu tài khoản thử và bí mật chạy cục bộ lấy từ môi trường hoặc fixture.
-- [ ] Tạo script Playwright đi qua giao diện Web. Dùng tối thiểu ba mẫu assertion trong mỗi feature để dễ đối chiếu rubric. Ví dụ kiểm thông báo, giá trị hiển thị và hậu điều kiện sau khi tải lại hoặc xác nhận. Dùng API hỗ trợ tạo dữ liệu hoặc kiểm chứng hậu điều kiện khi phù hợp.
+- [x] Điền JSON riêng theo feature. Mỗi case có ID ổn định để truy từ log, HTML và issue về thiết kế. Tài khoản thử dùng fixture hoặc cấu hình môi trường cục bộ.
+- [x] Tạo script Playwright đi qua giao diện Web. Dùng tối thiểu ba mẫu assertion trong mỗi feature. Dùng API để hỗ trợ tạo dữ liệu hoặc kiểm chứng hậu điều kiện.
 - [ ] Lưu lượt chạy nháp theo feature. Sinh viên review diff, expected, selector, dữ liệu biên, hậu điều kiện và các case pass có assertion yếu theo [hướng dẫn kỹ thuật](docs/automation-techniques.md). Ghi vấn đề, lý do AI bỏ sót, phần đã sửa và kết quả chạy lại. Ghi các case chưa tự động hóa, giới hạn và cách đã thử.
-- [ ] Giữ ít nhất 8 commit có thay đổi file test script thực chất. Ví dụ 3 commit bộ case đầu theo feature, 3 commit sửa qua review, và 2 commit tăng coverage hoặc sửa fixture thể hiện trong script. Xuất lịch sử sau khi script đã hoàn tất.
+- [x] Tạo ít nhất 8 commit có thay đổi file test script thực chất. Có 9 commit thay đổi spec sau init và đã xuất lịch sử hiện tại.
 
 ## 3. Chạy chính thức và báo lỗi
+
+- [x] Codex kiểm tra ma trận nháp. Xem [kết quả và báo cáo](reports/README.md), [ảnh và issue đối chiếu](bugs/bug-reports.md).
 
 - [ ] Sinh viên chạy đủ 3 feature trên Chromium, Firefox và WebKit. Với đúng 12 case mỗi feature, dự kiến 108 lượt thực thi case trong 9 cặp feature và browser.
 - [ ] Mở và kiểm đủ 9 HTML report thật. Mỗi báo cáo hiển thị đúng `Run by: 23120262`, thời gian ISO, browser và feature. Lưu đủ tệp đính kèm và điền link báo cáo trong `reports/README.md`.
@@ -38,7 +40,8 @@
 
 - [ ] Chọn một script để demo end to end. Ghi video YouTube Unlisted ít nhất 5 phút, tự thuyết minh bằng tiếng Việt, hiện mặt hoặc chạy cả `whoami` và `hostname`.
 - [ ] Trong demo, chạy đa trình duyệt, mở HTML report thật và trình bày ít nhất một bản sửa của sinh viên đối với script do AI sinh.
-- [ ] Nếu làm phần Agent Skill 10 điểm, hoàn thiện skill dùng lại cho một feature mới, gồm quy trình thiết kế, dữ liệu, assertions, review, chạy đa trình duyệt, bug và audit. Quay cách dùng skill end to end cho một feature hoàn chỉnh và ghi link.
+- [x] Hoàn thiện [Agent Skill](.agents/skills/eshop-web-automation/SKILL.md) cùng hướng dẫn thiết kế, chạy, xác minh và hồ sơ ví dụ FR-09.
+- [ ] Quay cách dùng skill từ SRS đến review, chạy và đọc report của một feature hoàn chỉnh. Ghi link video.
 
 ## 5. Báo cáo, tự chấm và nộp
 

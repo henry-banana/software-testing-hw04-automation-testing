@@ -14,9 +14,9 @@ Bắt đầu ở [checklist công việc](TASKS.md). Xem [báo cáo chính](2312
 | `data/`, `tests/` | Dữ liệu JSON và script Playwright tương ứng |
 | `scripts/run-matrix.mjs` | Lệnh chạy theo feature và trình duyệt |
 | `reports/` | HTML, kết quả JSON và bảng liên kết các lượt chạy |
-| `bugs/`, `evidence/github-issues/` | Bug report, [mẫu issue cho repo nhóm](bugs/issue-template.md), liên kết issue và ảnh |
+| [Hồ sơ lỗi theo FR](bugs/bug-reports.md) | Tám hồ sơ phân tích, biến thể, ảnh và issue đối chiếu, kèm [mẫu issue](bugs/issue-template.md) |
 | `ai-audit/` | Khai báo, audit và critique |
-| `.agents/skills/eshop-web-automation/` | Khung Agent Skill |
+| [Agent Skill EShop Web Automation](.agents/skills/eshop-web-automation/SKILL.md) | Thiết kế, Playwright, kiểm ma trận, mẫu báo cáo và ví dụ FR-09 |
 | `git-commit-log.txt` | Lịch sử commit xuất trước khi nộp |
 
 ## Cài và chạy
@@ -35,11 +35,15 @@ npm.cmd test -- fr09
 npm.cmd test
 ```
 
-Các lệnh `npm.cmd test` dùng sau khi điền test case vào tệp `.spec.ts`. Hiện tại lệnh liệt kê cho biết chưa có test. Lệnh test không thêm đối số chạy đủ 9 cặp. Lệnh có một đối số chạy một feature trên cả ba browser. Dùng `all` ở vị trí feature để chạy tất cả feature trên một browser.
+Lệnh test không thêm đối số chạy đủ 9 cặp. Lệnh có một đối số chạy một feature trên cả ba browser. Dùng `all` ở vị trí feature để chạy tất cả feature trên một browser. Chạy nháp bằng `npm.cmd test -- --draft fr09 chromium` hoặc `npm.cmd test -- --draft`. Báo cáo nháp lưu dưới `test-results/draft-reports/`.
+
+Backend tự seed lại SQLite khi khởi động. Dùng một bản sao SUT có cơ sở dữ liệu thử cho các lượt chạy. Với npm 12, nếu `npm ci` báo đã chặn script cài đặt của sqlite3, chạy `npm.cmd install-scripts approve sqlite3` rồi `npm.cmd rebuild sqlite3` trong backend của bản thử. Phiên mặc định đọc tài khoản admin demo do seed tạo. Có thể cấu hình tài khoản thử bằng `ESHOP_ADMIN_EMAIL` và `ESHOP_ADMIN_PASSWORD`.
 
 Web mặc định ở `http://localhost:5173` và có thể đổi bằng `ESHOP_WEB_URL`. Khi điền tests cho FR-17, dùng Web Admin ở `http://localhost:5174`. Xem [ma trận báo cáo](reports/README.md) để lưu báo cáo chính thức.
 
 ## Tóm tắt kết quả
+
+Hiện có 42 case tự động hóa. Lượt chạy nháp của Codex ghi 126 lượt kiểm, 84 pass và 42 fail trên 9 cặp feature và browser. Xem [kết quả nháp](reports/README.md) và [đối chiếu lỗi](bugs/bug-reports.md). Bảng dưới dành cho lượt tự chạy chính thức.
 
 | Feature | Test tự động hóa | Lượt thực thi | Pass | Fail | Browser runs | Bug xác nhận |
 | --- | --- | --- | --- | --- | --- | --- |
