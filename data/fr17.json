@@ -1,1 +1,166 @@
-[]
+[
+  {
+    "id": "FR17-01",
+    "title": "Create and persist a fixed coupon",
+    "kind": "create",
+    "allowed": true,
+    "form": {
+      "type": "fixed",
+      "discount": "1",
+      "min": "0",
+      "expiry": "2099-12-31",
+      "uses": "1"
+    }
+  },
+  {
+    "id": "FR17-02",
+    "title": "Create and persist a percent coupon",
+    "kind": "create",
+    "allowed": true,
+    "form": {
+      "type": "percent",
+      "discount": "15",
+      "min": "300000",
+      "expiry": "2099-12-31",
+      "uses": "2"
+    }
+  },
+  {
+    "id": "FR17-03",
+    "title": "Reject duplicate code and preserve the existing coupon",
+    "kind": "duplicate",
+    "allowed": false,
+    "form": {
+      "type": "fixed",
+      "discount": "99999",
+      "min": "0",
+      "expiry": "2099-12-31",
+      "uses": "1"
+    }
+  },
+  {
+    "id": "FR17-04",
+    "title": "Require coupon code",
+    "kind": "create",
+    "allowed": false,
+    "form": {
+      "type": "fixed",
+      "discount": "50000",
+      "min": "0",
+      "expiry": "2099-12-31",
+      "uses": "1",
+      "blankCode": true
+    }
+  },
+  {
+    "id": "FR17-05",
+    "title": "Require discount value",
+    "kind": "create",
+    "allowed": false,
+    "form": {
+      "type": "fixed",
+      "discount": "",
+      "min": "0",
+      "expiry": "2099-12-31",
+      "uses": "1"
+    }
+  },
+  {
+    "id": "FR17-06",
+    "title": "Require expiry date",
+    "kind": "create",
+    "allowed": false,
+    "form": {
+      "type": "fixed",
+      "discount": "50000",
+      "min": "0",
+      "expiry": "",
+      "uses": "1"
+    }
+  },
+  {
+    "id": "FR17-07",
+    "title": "Reject zero discount",
+    "kind": "create",
+    "allowed": false,
+    "form": {
+      "type": "fixed",
+      "discount": "0",
+      "min": "0",
+      "expiry": "2099-12-31",
+      "uses": "1"
+    }
+  },
+  {
+    "id": "FR17-08",
+    "title": "Reject negative discount",
+    "kind": "create",
+    "allowed": false,
+    "form": {
+      "type": "fixed",
+      "discount": "-1",
+      "min": "0",
+      "expiry": "2099-12-31",
+      "uses": "1"
+    }
+  },
+  {
+    "id": "FR17-09",
+    "title": "Reject negative minimum order",
+    "kind": "create",
+    "allowed": false,
+    "form": {
+      "type": "fixed",
+      "discount": "50000",
+      "min": "-1",
+      "expiry": "2099-12-31",
+      "uses": "1"
+    }
+  },
+  {
+    "id": "FR17-10",
+    "title": "Reject usage limit zero",
+    "kind": "create",
+    "allowed": false,
+    "form": {
+      "type": "fixed",
+      "discount": "50000",
+      "min": "0",
+      "expiry": "2099-12-31",
+      "uses": "0"
+    }
+  },
+  {
+    "id": "FR17-11",
+    "title": "View seeded coupon and its details",
+    "kind": "view",
+    "allowed": true,
+    "form": {
+      "type": "fixed",
+      "discount": "50000",
+      "min": "0",
+      "expiry": "2099-12-31",
+      "uses": "1"
+    }
+  },
+  {
+    "id": "FR17-12",
+    "title": "Delete coupon and confirm persisted absence",
+    "kind": "delete",
+    "allowed": true,
+    "form": {
+      "type": "fixed",
+      "discount": "50000",
+      "min": "0",
+      "expiry": "2099-12-31",
+      "uses": "1"
+    }
+  },
+  {
+    "id": "FR17-13",
+    "title": "Regular user cannot open coupon administration",
+    "kind": "regular",
+    "allowed": false,
+    "form": null
+  }
+]
