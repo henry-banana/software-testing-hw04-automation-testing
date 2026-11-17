@@ -1,0 +1,11 @@
+node_modules/
+test-results/
+playwright-report/
+playwright/.auth/
+.env
+.env.*
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+/submission/
+/23120262_HW04_AI_Automation_*.zip
