@@ -1,3 +1,7 @@
+7a31e05166236c428a85920f1ee5d41c4cd695a3 2026-11-18T10:35:41+07:00 docs: link HW04 demo and publish FR-09 rerun evidence
+9e882dbdbca5ba3b827d76d93e999198538f6d8e 2026-11-17T22:19:21+07:00 refactor: generalize web automation verification
+d2dc5ce7d00107961a062d706335a21903b4645f 2026-11-17T16:58:31+07:00 docs: update skills
+2a05f3d11c9f73f3603bc13d52611940516185cb 2026-11-17T16:51:53+07:00 docs: finalize HW04 reports audit and GitHub issue evidence
 d1bf04e8657f467e417b5e6090240621097933af 2026-11-17T16:49:29+07:00 fix(test): mask disposable fixture passwords in public reports
 46b733600d11fb83a0e825bcd7aa2ddaeacf35f0 2026-11-17T13:18:59+07:00 test: publish reproducible student HW04 Playwright evidence
 d16d2b402eab2ce6834efdf850e83ab86d2849b1 2026-11-17T13:10:21+07:00 test: strengthen HW04 oracles and isolate public run artifacts
