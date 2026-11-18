@@ -1,3 +1,5 @@
+512582da8f5e02a038666ad99a6b4ee86e2ba49a 2026-11-18T10:51:34+07:00 docs: use complete HW04 demo video
+d82bc0f6aef3574ea8c557e5cb57bca9f9d4c355 2026-11-18T10:35:41+07:00 docs: refresh HW04 submission commit log
 7a31e05166236c428a85920f1ee5d41c4cd695a3 2026-11-18T10:35:41+07:00 docs: link HW04 demo and publish FR-09 rerun evidence
 9e882dbdbca5ba3b827d76d93e999198538f6d8e 2026-11-17T22:19:21+07:00 refactor: generalize web automation verification
 d2dc5ce7d00107961a062d706335a21903b4645f 2026-11-17T16:58:31+07:00 docs: update skills
