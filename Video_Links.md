@@ -2,10 +2,10 @@
 
 | Mục | Link YouTube Unlisted | Feature | Thời lượng bản đăng |
 | --- | --- | --- | --- |
-| Task 2 | [Video demo FR-09, bản tua](https://youtu.be/imoZLg2rSA8) | FR-09 | 3:22. Đề yêu cầu từ 5:00 |
-| Agent Skill | [Video minh họa Web Automation Testing](https://youtu.be/imoZLg2rSA8) | FR-09 | 3:22 |
+| Task 2 | [Video demo FR-09](https://youtu.be/NWVCdiYtDfw) | FR-09 | 5:00 |
+| Agent Skill | [Video minh họa Web Automation Testing](https://youtu.be/NWVCdiYtDfw) | FR-09 | 5:00 |
 
-Sinh viên xác nhận bản gốc dài hơn 5 phút. Video hiện tại là bản tua. Có thể đối chiếu dữ liệu biên, diff kiểm dòng Tổng thanh toán, báo cáo ba trình duyệt và issue từ các liên kết dưới đây.
+Video FR-09 minh họa Task 2 và cách dùng Agent Skill. Các liên kết dưới đây dẫn đến dữ liệu biên, phần review, báo cáo ba trình duyệt và issue liên quan.
 
 - [Hồ sơ FR-09](docs/features/fr09.md)
 - [Agent Skill Web Automation Testing](.agents/skills/web-automation-testing/SKILL.md)

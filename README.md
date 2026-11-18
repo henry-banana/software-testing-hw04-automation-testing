@@ -2,7 +2,7 @@
 
 Bài cá nhân của MSSV 23120262. Phạm vi kế thừa HW02 gồm FR-04 Hồ sơ cá nhân, FR-09 Áp dụng mã giảm giá và FR-17 Quản lý mã giảm giá.
 
-Bắt đầu ở [checklist công việc](TASKS.md). Xem [báo cáo chính](23120262_Report.md) và [video FR-09](https://youtu.be/imoZLg2rSA8).
+Xem [báo cáo chính](23120262_Report.md) và [video FR-09](https://youtu.be/NWVCdiYtDfw).
 
 ## Cấu trúc
 
@@ -57,7 +57,7 @@ Web mặc định ở `http://localhost:5173` và có thể đổi bằng `ESHOP
 
 Lượt chạy FR-09 ngày 18/11/2026 ghi 27 pass, 12 fail trên 39 lượt thực thi. [Ba báo cáo của lượt chạy lại](reports/README.md#lượt-chạy-lại-fr-09-ngày-18112026)
 
-[Tải ZIP của repo công khai](https://github.com/henry-banana/software-testing-hw04-automation-testing/archive/refs/heads/main.zip)
+[Repo GitHub công khai](https://github.com/henry-banana/software-testing-hw04-automation-testing)
 
 ## Tự đánh giá
 
@@ -66,8 +66,8 @@ Lượt chạy FR-09 ngày 18/11/2026 ghi 27 pass, 12 fail trên 39 lượt th�
 | Task 1 Feature A | 25 | 25 | 14 case, 3 báo cáo HTML, 2 issue |
 | Task 1 Feature B | 25 | 25 | 13 case, 3 báo cáo HTML, 3 issue |
 | Task 1 Feature C | 25 | 25 | 15 case, 3 báo cáo HTML, 3 issue |
-| Task 2 Demo video | 15 | 15 | [Video FR-09](https://youtu.be/imoZLg2rSA8). Bản tua đăng trên YouTube dài 3:22. Đề yêu cầu từ 5:00 |
-| Agent Skill | 10 | 10 | [Skill dùng chung](.agents/skills/web-automation-testing/SKILL.md) và [video minh họa FR-09](https://youtu.be/imoZLg2rSA8) |
+| Task 2 Demo video | 15 | 15 | [Video FR-09](https://youtu.be/NWVCdiYtDfw) (5:00, YouTube Unlisted) |
+| Agent Skill | 10 | 10 | [Skill dùng chung](.agents/skills/web-automation-testing/SKILL.md) và [video minh họa FR-09](https://youtu.be/NWVCdiYtDfw) |
 | **Tổng** | **100** | **100** | Điểm tự chấm của sinh viên |
 
 [Thông tin video và báo cáo dùng để đối chiếu](Video_Links.md)

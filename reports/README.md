@@ -28,7 +28,7 @@ Tổng 42 case và 126 lượt thực thi. Có 84 pass, 42 fail, 0 skip, 0 flaky
 
 ## Lượt chạy lại FR-09 ngày 18/11/2026
 
-**Run by: 23120262**. Batch `2026-11-18T03-25-15.303Z`. Ba trình duyệt chạy cùng 13 case, tổng 39 lượt, 27 pass và 12 fail. Không có ca skip, flaky hoặc lỗi thiết lập. Các assertion fail ở FR09-02, FR09-03, FR09-05 và FR09-09. [Video demo FR-09](https://youtu.be/imoZLg2rSA8), [hồ sơ FR-09](../docs/features/fr09.md)
+**Run by: 23120262**. Batch `2026-11-18T03-25-15.303Z`. Ba trình duyệt chạy cùng 13 case, tổng 39 lượt, 27 pass và 12 fail. Không có ca skip, flaky hoặc lỗi thiết lập. Các assertion fail ở FR09-02, FR09-03, FR09-05 và FR09-09. [Video demo FR-09](https://youtu.be/NWVCdiYtDfw), [hồ sơ FR-09](../docs/features/fr09.md)
 
 | Browser | Thời điểm thực thi UTC | Pass | Fail | Báo cáo |
 | --- | --- | ---: | ---: | --- |
