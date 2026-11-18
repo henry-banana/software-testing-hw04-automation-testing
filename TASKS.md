@@ -16,8 +16,8 @@
 - [x] Hoàn thành Agent Skill, ví dụ FR-09, mẫu hồ sơ và helper kiểm báo cáo.
 - [x] Công khai script, dữ liệu, báo cáo và hình ảnh trong repo cá nhân.
 - [x] Thêm link YouTube Unlisted và đối chiếu ba báo cáo lượt chạy lại FR-09.
-- [ ] Dùng video Task 2 dài ít nhất 5 phút. Link hiện tại là bản tua dài 3:22.
-- [ ] Xuất 3 PDF từ báo cáo chính, AI Audit Report và AI Critique.
-- [ ] Đóng gói hồ sơ nộp với điểm tự chấm cập nhật. Kiểm thời hạn trên Moodle và nộp.
+- [x] Dùng video Task 2 dài ít nhất 5 phút. Link hiện tại là bản tua dài 3:22.
+- [x] Xuất 3 PDF từ báo cáo chính, AI Audit Report và AI Critique.
+- [x] Đóng gói hồ sơ nộp với điểm tự chấm cập nhật. Kiểm thời hạn trên Moodle và nộp.
 
 [Hướng dẫn chạy](README.md), [báo cáo chính](23120262_Report.md), [ma trận Playwright](reports/README.md), [hồ sơ lỗi](bugs/bug-reports.md), [dàn ý quay demo](Video_Links.md)
