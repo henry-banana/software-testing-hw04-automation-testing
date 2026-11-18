@@ -26,6 +26,16 @@ Tổng 42 case và 126 lượt thực thi. Có 84 pass, 42 fail, 0 skip, 0 flaky
 | FR-17 | firefox | `2026-11-17T06:15:31.510Z` |
 | FR-17 | webkit | `2026-11-17T06:16:21.243Z` |
 
+## Lượt chạy lại FR-09 ngày 18/11/2026
+
+**Run by: 23120262**. Batch `2026-11-18T03-25-15.303Z`. Ba trình duyệt chạy cùng 13 case, tổng 39 lượt, 27 pass và 12 fail. Không có ca skip, flaky hoặc lỗi thiết lập. Các assertion fail ở FR09-02, FR09-03, FR09-05 và FR09-09. [Video demo FR-09](https://youtu.be/imoZLg2rSA8), [hồ sơ FR-09](../docs/features/fr09.md)
+
+| Browser | Thời điểm thực thi UTC | Pass | Fail | Báo cáo |
+| --- | --- | ---: | ---: | --- |
+| chromium | `2026-11-18T03:25:18.583Z` | 9 | 4 | [HTML](2026-11-18T03-25-15.303Z/fr09/chromium/html/index.html), [JSON](2026-11-18T03-25-15.303Z/fr09/chromium/results.json) |
+| firefox | `2026-11-18T03:25:58.481Z` | 9 | 4 | [HTML](2026-11-18T03-25-15.303Z/fr09/firefox/html/index.html), [JSON](2026-11-18T03-25-15.303Z/fr09/firefox/results.json) |
+| webkit | `2026-11-18T03:27:14.681Z` | 9 | 4 | [HTML](2026-11-18T03-25-15.303Z/fr09/webkit/html/index.html), [JSON](2026-11-18T03-25-15.303Z/fr09/webkit/results.json) |
+
 ## Mở báo cáo
 
 Mở `html/index.html` từ bản clone hoặc ZIP đã giải nén. Giữ nguyên thư mục `html/data/` để mở ảnh, phản hồi và ngữ cảnh lỗi. `results.json` là kết quả máy đọc, với đường dẫn ảnh và tệp kèm tương đối từ thư mục của lượt chạy.

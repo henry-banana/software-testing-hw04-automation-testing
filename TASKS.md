@@ -12,10 +12,11 @@
 
 ## Hồ sơ
 
-- [x] Hoàn thành báo cáo chính, tự đánh giá phần có bằng chứng, AI Audit, AI Critique và ba biểu mẫu AI.
+- [x] Hoàn thành báo cáo chính, tự đánh giá 100/100, AI Audit, AI Critique và ba biểu mẫu AI đã ký.
 - [x] Hoàn thành Agent Skill, ví dụ FR-09, mẫu hồ sơ và helper kiểm báo cáo.
 - [x] Công khai script, dữ liệu, báo cáo và hình ảnh trong repo cá nhân.
-- [ ] Thêm link video Task 2 và link minh họa Agent Skill.
+- [x] Thêm link YouTube Unlisted và đối chiếu ba báo cáo lượt chạy lại FR-09.
+- [ ] Dùng video Task 2 dài ít nhất 5 phút. Link hiện tại là bản tua dài 3:22.
 - [ ] Xuất 3 PDF từ báo cáo chính, AI Audit Report và AI Critique.
 - [ ] Đóng gói hồ sơ nộp với điểm tự chấm cập nhật. Kiểm thời hạn trên Moodle và nộp.
 

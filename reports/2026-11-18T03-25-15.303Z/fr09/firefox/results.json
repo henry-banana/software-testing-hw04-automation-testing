@@ -1,0 +1,889 @@
+{
+  "config": {
+    "argv": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/fr09/",
+      "--project",
+      "firefox",
+      "--output",
+      "test-results\\2026-11-18T03-25-15.303Z\\fr09\\firefox"
+    ],
+    "configFile": "playwright.config.ts",
+    "rootDir": "tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "test-results/2026-11-18T03-25-15.303Z/fr09/firefox",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "test-results/2026-11-18T03-25-15.303Z/fr09/firefox",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "test-results/2026-11-18T03-25-15.303Z/fr09/firefox",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "test-results\\2026-11-18T03-25-15.303Z\\fr09\\firefox",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "firefox",
+        "testDir": "tests",
+        "snapshotDir": "tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://localhost:5173",
+          "screenshot": "only-on-failure",
+          "trace": "off",
+          "browserName": "firefox"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "scripts\\redact-fixture-passwords.ts",
+        null
+      ],
+      [
+        "line",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports\\2026-11-18T03-25-15.303Z\\fr09\\firefox\\html",
+          "open": "never",
+          "title": "Run by: 23120262 | 2026-11-18T03:25:58.000Z | FR09 | firefox"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports\\2026-11-18T03-25-15.303Z\\fr09\\firefox\\results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "fr09\\apply-coupon.spec.ts",
+      "file": "fr09/apply-coupon.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "FR09-01 Apply fixed coupon",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4024,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T03:25:58.860Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "coupon-response",
+                      "contentType": "text/plain",
+                      "body": "SFRUUCAyMDAKeyJzdWNjZXNzIjp0cnVlLCJjb3Vwb25faWQiOjE3LCJkaXNjb3VudF9hbW91bnQiOjUwMDAwLCJmaW5hbF9hbW91bnQiOjI5OTUwMDAwLCJtZXNzYWdlIjoiw4FwIGThu6VuZyB0aMOgbmggY8O0bmchIEdp4bqjbSA1MCwwMDAg4oKrIn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "031452192680fa7b8c5a-213ad84adbfd84cf9e46",
+          "file": "fr09/apply-coupon.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "FR09-02 Compute ten percent discount",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8155,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Tiết kiệm:')\nExpected: \u001b[32m\"Tiết kiệm: \u001b[7m3\u001b[27m,000,000 ₫\"\u001b[39m\nReceived: \u001b[31m\"Tiết kiệm: \u001b[7m-270\u001b[27m,000,000 ₫\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Tiết kiệm:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Tiết kiệm:')\u001b[22m\n\u001b[2m    14 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m       - unexpected value \"Tiết kiệm: -270,000,000 ₫\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Tiết kiệm:')\nExpected: \u001b[32m\"Tiết kiệm: \u001b[7m3\u001b[27m,000,000 ₫\"\u001b[39m\nReceived: \u001b[31m\"Tiết kiệm: \u001b[7m-270\u001b[27m,000,000 ₫\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Tiết kiệm:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Tiết kiệm:')\u001b[22m\n\u001b[2m    14 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m       - unexpected value \"Tiết kiệm: -270,000,000 ₫\"\u001b[22m\n\n    at tests\\fr09\\apply-coupon.spec.ts:67:30",
+                    "location": {
+                      "file": "tests\\fr09\\apply-coupon.spec.ts",
+                      "column": 30,
+                      "line": 67
+                    },
+                    "snippet": " \u001b[90m 65 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(reply\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 67 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tiết kiệm: ${vnd(row.expected.discount)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 68 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(final)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Thành tiền: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 69 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 70 |\u001b[39m       ])\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "tests\\fr09\\apply-coupon.spec.ts",
+                        "column": 30,
+                        "line": 67
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Tiết kiệm:')\nExpected: \u001b[32m\"Tiết kiệm: \u001b[7m3\u001b[27m,000,000 ₫\"\u001b[39m\nReceived: \u001b[31m\"Tiết kiệm: \u001b[7m-270\u001b[27m,000,000 ₫\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Tiết kiệm:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Tiết kiệm:')\u001b[22m\n\u001b[2m    14 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m       - unexpected value \"Tiết kiệm: -270,000,000 ₫\"\u001b[22m\n\n\n \u001b[90m 65 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(reply\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 67 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tiết kiệm: ${vnd(row.expected.discount)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 68 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(final)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Thành tiền: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 69 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 70 |\u001b[39m       ])\u001b[33m;\u001b[39m\n\u001b[2m    at tests\\fr09\\apply-coupon.spec.ts:67:30\u001b[22m"
+                    },
+                    {
+                      "location": {
+                        "file": "tests\\fr09\\apply-coupon.spec.ts",
+                        "column": 28,
+                        "line": 68
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Thành tiền:')\nExpected: \u001b[32m\"Thành tiền: \u001b[7m27\u001b[27m,000,000 ₫\"\u001b[39m\nReceived: \u001b[31m\"Thành tiền: \u001b[7m300\u001b[27m,000,000 ₫\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Thành tiền:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Thành tiền:')\u001b[22m\n\u001b[2m    14 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m       - unexpected value \"Thành tiền: 300,000,000 ₫\"\u001b[22m\n\n\n \u001b[90m 66 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n \u001b[90m 67 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tiết kiệm: ${vnd(row.expected.discount)}`\u001b[39m)\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 68 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(final)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Thành tiền: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 69 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 70 |\u001b[39m       ])\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m     } \u001b[36melse\u001b[39m {\n\u001b[2m    at tests\\fr09\\apply-coupon.spec.ts:68:28\u001b[22m"
+                    },
+                    {
+                      "location": {
+                        "file": "tests\\fr09\\apply-coupon.spec.ts",
+                        "column": 35,
+                        "line": 69
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Tổng thanh toán:')\nExpected: \u001b[32m\"Tổng thanh toán: \u001b[7m27\u001b[27m,000,000 ₫\"\u001b[39m\nReceived: \u001b[31m\"Tổng thanh toán: \u001b[7m300\u001b[27m,000,000 ₫\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Tổng thanh toán:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Tổng thanh toán:')\u001b[22m\n\u001b[2m    14 × locator resolved to <span class=\"font-bold text-xl\">Tổng thanh toán: 300,000,000 ₫</span>\u001b[22m\n\u001b[2m       - unexpected value \"Tổng thanh toán: 300,000,000 ₫\"\u001b[22m\n\n\n \u001b[90m 67 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tiết kiệm: ${vnd(row.expected.discount)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 68 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(final)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Thành tiền: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 69 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 70 |\u001b[39m       ])\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 72 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(reply\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[2m    at tests\\fr09\\apply-coupon.spec.ts:69:35\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T03:26:04.136Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "coupon-response",
+                      "contentType": "text/plain",
+                      "body": "SFRUUCAyMDAKeyJzdWNjZXNzIjp0cnVlLCJjb3Vwb25faWQiOjE4LCJkaXNjb3VudF9hbW91bnQiOi0yNzAwMDAwMDAsImZpbmFsX2Ftb3VudCI6MzAwMDAwMDAwLCJtZXNzYWdlIjoiw4FwIGThu6VuZyB0aMOgbmggY8O0bmchIEdp4bqjbSAxMCUifQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "html/data/1facc50aa3673082c34537ee4310ec0ad7824571.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "html/data/3208d6c35801f0e1a55297980504e945d79b85fa.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "tests\\fr09\\apply-coupon.spec.ts",
+                    "column": 30,
+                    "line": 67
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "031452192680fa7b8c5a-bfd03fa17e099643be1f",
+          "file": "fr09/apply-coupon.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "FR09-03 Compute one hundred percent discount",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8697,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Tiết kiệm:')\nExpected: \u001b[32m\"Tiết kiệm: \u001b[7m3\u001b[27m0,000,000 ₫\"\u001b[39m\nReceived: \u001b[31m\"Tiết kiệm: \u001b[7m-2,97\u001b[27m0,000,000 ₫\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Tiết kiệm:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Tiết kiệm:')\u001b[22m\n\u001b[2m    13 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m       - unexpected value \"Tiết kiệm: -2,970,000,000 ₫\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Tiết kiệm:')\nExpected: \u001b[32m\"Tiết kiệm: \u001b[7m3\u001b[27m0,000,000 ₫\"\u001b[39m\nReceived: \u001b[31m\"Tiết kiệm: \u001b[7m-2,97\u001b[27m0,000,000 ₫\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Tiết kiệm:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Tiết kiệm:')\u001b[22m\n\u001b[2m    13 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m       - unexpected value \"Tiết kiệm: -2,970,000,000 ₫\"\u001b[22m\n\n    at tests\\fr09\\apply-coupon.spec.ts:67:30",
+                    "location": {
+                      "file": "tests\\fr09\\apply-coupon.spec.ts",
+                      "column": 30,
+                      "line": 67
+                    },
+                    "snippet": " \u001b[90m 65 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(reply\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 67 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tiết kiệm: ${vnd(row.expected.discount)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 68 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(final)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Thành tiền: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 69 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 70 |\u001b[39m       ])\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "tests\\fr09\\apply-coupon.spec.ts",
+                        "column": 30,
+                        "line": 67
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Tiết kiệm:')\nExpected: \u001b[32m\"Tiết kiệm: \u001b[7m3\u001b[27m0,000,000 ₫\"\u001b[39m\nReceived: \u001b[31m\"Tiết kiệm: \u001b[7m-2,97\u001b[27m0,000,000 ₫\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Tiết kiệm:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Tiết kiệm:')\u001b[22m\n\u001b[2m    13 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m       - unexpected value \"Tiết kiệm: -2,970,000,000 ₫\"\u001b[22m\n\n\n \u001b[90m 65 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(reply\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 67 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tiết kiệm: ${vnd(row.expected.discount)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 68 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(final)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Thành tiền: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 69 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 70 |\u001b[39m       ])\u001b[33m;\u001b[39m\n\u001b[2m    at tests\\fr09\\apply-coupon.spec.ts:67:30\u001b[22m"
+                    },
+                    {
+                      "location": {
+                        "file": "tests\\fr09\\apply-coupon.spec.ts",
+                        "column": 28,
+                        "line": 68
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Thành tiền:')\nExpected: \u001b[32m\"Thành tiền: 0 ₫\"\u001b[39m\nReceived: \u001b[31m\"Thành tiền: \u001b[7m3,000,000,00\u001b[27m0 ₫\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Thành tiền:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Thành tiền:')\u001b[22m\n\u001b[2m    13 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m       - unexpected value \"Thành tiền: 3,000,000,000 ₫\"\u001b[22m\n\n\n \u001b[90m 66 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n \u001b[90m 67 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tiết kiệm: ${vnd(row.expected.discount)}`\u001b[39m)\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 68 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(final)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Thành tiền: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 69 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 70 |\u001b[39m       ])\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m     } \u001b[36melse\u001b[39m {\n\u001b[2m    at tests\\fr09\\apply-coupon.spec.ts:68:28\u001b[22m"
+                    },
+                    {
+                      "location": {
+                        "file": "tests\\fr09\\apply-coupon.spec.ts",
+                        "column": 35,
+                        "line": 69
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Tổng thanh toán:')\nExpected: \u001b[32m\"Tổng thanh toán: 0 ₫\"\u001b[39m\nReceived: \u001b[31m\"Tổng thanh toán: \u001b[7m3,000,000,00\u001b[27m0 ₫\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Tổng thanh toán:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Tổng thanh toán:')\u001b[22m\n\u001b[2m    13 × locator resolved to <span class=\"font-bold text-xl\">Tổng thanh toán: 3,000,000,000 ₫</span>\u001b[22m\n\u001b[2m       - unexpected value \"Tổng thanh toán: 3,000,000,000 ₫\"\u001b[22m\n\n\n \u001b[90m 67 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tiết kiệm: ${vnd(row.expected.discount)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 68 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(final)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Thành tiền: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 69 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 70 |\u001b[39m       ])\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 72 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(reply\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[2m    at tests\\fr09\\apply-coupon.spec.ts:69:35\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T03:26:13.097Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "coupon-response",
+                      "contentType": "text/plain",
+                      "body": "SFRUUCAyMDAKeyJzdWNjZXNzIjp0cnVlLCJjb3Vwb25faWQiOjE5LCJkaXNjb3VudF9hbW91bnQiOi0yOTcwMDAwMDAwLCJmaW5hbF9hbW91bnQiOjMwMDAwMDAwMDAsIm1lc3NhZ2UiOiLDgXAgZOG7pW5nIHRow6BuaCBjw7RuZyEgR2nhuqNtIDEwMCUifQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "html/data/3bb31af13efa557b7bc2d652665c0eac2de71056.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "html/data/1637b3c5c868400107ba296a90325bb3b62889d5.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "tests\\fr09\\apply-coupon.spec.ts",
+                    "column": 30,
+                    "line": 67
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "031452192680fa7b8c5a-3f609267e1349729eb2e",
+          "file": "fr09/apply-coupon.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "FR09-04 Reject total one dong below the coupon minimum",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3686,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T03:26:23.141Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "coupon-response",
+                      "contentType": "text/plain",
+                      "body": "SFRUUCA0MDAKeyJlcnJvciI6IsSQxqFuIGjDoG5nIGNoxrBhIMSR4bunIGdpw6EgdHLhu4sgdOG7kWkgdGhp4buDdSAzMCwwMDAsMDAxIOKCqyDEkeG7gyDDoXAgZOG7pW5nIG3DoyBuw6B5In0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "031452192680fa7b8c5a-4c112981f30e60034118",
+          "file": "fr09/apply-coupon.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "FR09-05 Accept total exactly at the coupon minimum",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7994,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at tests\\fr09\\apply-coupon.spec.ts:65:31",
+                    "location": {
+                      "file": "tests\\fr09\\apply-coupon.spec.ts",
+                      "column": 31,
+                      "line": 65
+                    },
+                    "snippet": " \u001b[90m 63 |\u001b[39m     \u001b[36mconst\u001b[39m paymentTotal \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Tổng thanh toán:'\u001b[39m\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 64 |\u001b[39m     \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpected) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(reply\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 66 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n \u001b[90m 67 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tiết kiệm: ${vnd(row.expected.discount)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 68 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(final)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Thành tiền: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "tests\\fr09\\apply-coupon.spec.ts",
+                        "column": 31,
+                        "line": 65
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n \u001b[90m 63 |\u001b[39m     \u001b[36mconst\u001b[39m paymentTotal \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Tổng thanh toán:'\u001b[39m\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 64 |\u001b[39m     \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpected) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(reply\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 66 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n \u001b[90m 67 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tiết kiệm: ${vnd(row.expected.discount)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 68 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(final)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Thành tiền: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n\u001b[2m    at tests\\fr09\\apply-coupon.spec.ts:65:31\u001b[22m"
+                    },
+                    {
+                      "location": {
+                        "file": "tests\\fr09\\apply-coupon.spec.ts",
+                        "column": 30,
+                        "line": 67
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Tiết kiệm:')\nExpected: \u001b[32m\"Tiết kiệm: 50,000 ₫\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Tiết kiệm:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Tiết kiệm:')\u001b[22m\n\n\n \u001b[90m 65 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(reply\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 67 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tiết kiệm: ${vnd(row.expected.discount)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 68 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(final)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Thành tiền: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 69 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 70 |\u001b[39m       ])\u001b[33m;\u001b[39m\n\u001b[2m    at tests\\fr09\\apply-coupon.spec.ts:67:30\u001b[22m"
+                    },
+                    {
+                      "location": {
+                        "file": "tests\\fr09\\apply-coupon.spec.ts",
+                        "column": 28,
+                        "line": 68
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Thành tiền:')\nExpected: \u001b[32m\"Thành tiền: 29,950,000 ₫\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Thành tiền:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Thành tiền:')\u001b[22m\n\n\n \u001b[90m 66 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mall([\n \u001b[90m 67 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tiết kiệm: ${vnd(row.expected.discount)}`\u001b[39m)\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 68 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(final)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Thành tiền: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 69 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 70 |\u001b[39m       ])\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m     } \u001b[36melse\u001b[39m {\n\u001b[2m    at tests\\fr09\\apply-coupon.spec.ts:68:28\u001b[22m"
+                    },
+                    {
+                      "location": {
+                        "file": "tests\\fr09\\apply-coupon.spec.ts",
+                        "column": 35,
+                        "line": 69
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Tổng thanh toán:')\nExpected: \u001b[32m\"Tổng thanh toán: \u001b[7m29,95\u001b[27m0,000 ₫\"\u001b[39m\nReceived: \u001b[31m\"Tổng thanh toán: \u001b[7m30,00\u001b[27m0,000 ₫\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Tổng thanh toán:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Tổng thanh toán:')\u001b[22m\n\u001b[2m    14 × locator resolved to <span class=\"font-bold text-xl\">Tổng thanh toán: 30,000,000 ₫</span>\u001b[22m\n\u001b[2m       - unexpected value \"Tổng thanh toán: 30,000,000 ₫\"\u001b[22m\n\n\n \u001b[90m 67 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tiết kiệm: ${vnd(row.expected.discount)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m 68 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(final)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Thành tiền: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 69 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.expected.final)}`\u001b[39m)\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 70 |\u001b[39m       ])\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 72 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(reply\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[2m    at tests\\fr09\\apply-coupon.spec.ts:69:35\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T03:26:27.321Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "coupon-response",
+                      "contentType": "text/plain",
+                      "body": "SFRUUCA0MDAKeyJlcnJvciI6IsSQxqFuIGjDoG5nIGNoxrBhIMSR4bunIGdpw6EgdHLhu4sgdOG7kWkgdGhp4buDdSAzMCwwMDAsMDAwIOKCqyDEkeG7gyDDoXAgZOG7pW5nIG3DoyBuw6B5In0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "html/data/46b036d5eed92c1c8f4445291d8cf0bfb433350c.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "html/data/09144e03f5f70632fa87278fa0eb1069af730ae3.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "tests\\fr09\\apply-coupon.spec.ts",
+                    "column": 31,
+                    "line": 65
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "031452192680fa7b8c5a-1be366aa7cf7fe9b3bd9",
+          "file": "fr09/apply-coupon.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "FR09-06 Accept total one dong above the coupon minimum",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3675,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T03:26:36.050Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "coupon-response",
+                      "contentType": "text/plain",
+                      "body": "SFRUUCAyMDAKeyJzdWNjZXNzIjp0cnVlLCJjb3Vwb25faWQiOjIyLCJkaXNjb3VudF9hbW91bnQiOjUwMDAwLCJmaW5hbF9hbW91bnQiOjI5OTUwMDAwLCJtZXNzYWdlIjoiw4FwIGThu6VuZyB0aMOgbmggY8O0bmchIEdp4bqjbSA1MCwwMDAg4oKrIn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "031452192680fa7b8c5a-ffb5e0543f6522fa4267",
+          "file": "fr09/apply-coupon.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "FR09-07 Reject a coupon code that does not exist",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2851,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T03:26:40.364Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "coupon-response",
+                      "contentType": "text/plain",
+                      "body": "SFRUUCA0MDQKeyJlcnJvciI6Ik3DoyBnaeG6o20gZ2nDoSBraMO0bmcgdOG7k24gdOG6oWkgaG/hurdjIMSRw6MgYuG7iyB2w7QgaGnhu4d1IGjDs2EifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "031452192680fa7b8c5a-31533bb6fcce44a23dbc",
+          "file": "fr09/apply-coupon.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "FR09-08 Reject an expired coupon",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2862,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T03:26:43.227Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "coupon-response",
+                      "contentType": "text/plain",
+                      "body": "SFRUUCA0MDAKeyJlcnJvciI6Ik3DoyBnaeG6o20gZ2nDoSDEkcOjIGjhur90IGjhuqFuIn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "031452192680fa7b8c5a-07767fac16ed6c880f94",
+          "file": "fr09/apply-coupon.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "FR09-09 Reject coupon application without authentication",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 12747,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at tests\\fr09\\apply-coupon.spec.ts:72:31",
+                    "location": {
+                      "file": "tests\\fr09\\apply-coupon.spec.ts",
+                      "column": 31,
+                      "line": 72
+                    },
+                    "snippet": " \u001b[90m 70 |\u001b[39m       ])\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m     } \u001b[36melse\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(reply\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m       \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39merror) \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(page\u001b[33m.\u001b[39mgetByText(row\u001b[33m.\u001b[39merror\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.total)}`\u001b[39m)\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "tests\\fr09\\apply-coupon.spec.ts",
+                        "column": 31,
+                        "line": 72
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n \u001b[90m 70 |\u001b[39m       ])\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m     } \u001b[36melse\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(reply\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m       \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39merror) \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(page\u001b[33m.\u001b[39mgetByText(row\u001b[33m.\u001b[39merror\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.total)}`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[2m    at tests\\fr09\\apply-coupon.spec.ts:72:31\u001b[22m"
+                    },
+                    {
+                      "location": {
+                        "file": "tests\\fr09\\apply-coupon.spec.ts",
+                        "column": 34,
+                        "line": 74
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Tiết kiệm:')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveCount\" getByText('Tiết kiệm:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Tiết kiệm:')\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n \u001b[90m 72 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(reply\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 73 |\u001b[39m       \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39merror) \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(page\u001b[33m.\u001b[39mgetByText(row\u001b[33m.\u001b[39merror\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 74 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 75 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.total)}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 76 |\u001b[39m     }\n \u001b[90m 77 |\u001b[39m   })\u001b[33m;\u001b[39m\n\u001b[2m    at tests\\fr09\\apply-coupon.spec.ts:74:34\u001b[22m"
+                    },
+                    {
+                      "location": {
+                        "file": "tests\\fr09\\apply-coupon.spec.ts",
+                        "column": 39,
+                        "line": 75
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Tổng thanh toán:')\nExpected: \u001b[32m\"Tổng thanh toán: \u001b[7m30,00\u001b[27m0,000 ₫\"\u001b[39m\nReceived: \u001b[31m\"Tổng thanh toán: \u001b[7m29,95\u001b[27m0,000 ₫\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toHaveText\" getByText('Tổng thanh toán:') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Tổng thanh toán:')\u001b[22m\n\u001b[2m    14 × locator resolved to <span class=\"font-bold text-xl\">Tổng thanh toán: 29,950,000 ₫</span>\u001b[22m\n\u001b[2m       - unexpected value \"Tổng thanh toán: 29,950,000 ₫\"\u001b[22m\n\n\n \u001b[90m 73 |\u001b[39m       \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39merror) \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(page\u001b[33m.\u001b[39mgetByText(row\u001b[33m.\u001b[39merror\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(savings)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 75 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(paymentTotal)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m`Tổng thanh toán: ${vnd(row.total)}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 76 |\u001b[39m     }\n \u001b[90m 77 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 78 |\u001b[39m }\n\u001b[2m    at tests\\fr09\\apply-coupon.spec.ts:75:39\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T03:26:46.101Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "coupon-response",
+                      "contentType": "text/plain",
+                      "body": "SFRUUCAyMDAKeyJzdWNjZXNzIjp0cnVlLCJjb3Vwb25faWQiOjI0LCJkaXNjb3VudF9hbW91bnQiOjUwMDAwLCJmaW5hbF9hbW91bnQiOjI5OTUwMDAwLCJtZXNzYWdlIjoiw4FwIGThu6VuZyB0aMOgbmggY8O0bmchIEdp4bqjbSA1MCwwMDAg4oKrIn0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "html/data/629761118aeb5e248a57dc2e23605be9e8c7d881.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "html/data/63c1ac01e03f3acd81c58434ef84324fa1819c40.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "tests\\fr09\\apply-coupon.spec.ts",
+                    "column": 31,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "031452192680fa7b8c5a-d7ff1de66fa5aad4484d",
+          "file": "fr09/apply-coupon.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "FR09-10 Accept coupon one use below the user limit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4214,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T03:26:59.749Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "coupon-response",
+                      "contentType": "text/plain",
+                      "body": "SFRUUCAyMDAKeyJzdWNjZXNzIjp0cnVlLCJjb3Vwb25faWQiOjI1LCJkaXNjb3VudF9hbW91bnQiOjUwMDAwLCJmaW5hbF9hbW91bnQiOjI5OTUwMDAwLCJtZXNzYWdlIjoiw4FwIGThu6VuZyB0aMOgbmggY8O0bmchIEdp4bqjbSA1MCwwMDAg4oKrIn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "031452192680fa7b8c5a-98c48dc21dae802f6b4b",
+          "file": "fr09/apply-coupon.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "FR09-11 Reject coupon at the user limit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2857,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T03:27:04.746Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "coupon-response",
+                      "contentType": "text/plain",
+                      "body": "SFRUUCA0MDAKeyJlcnJvciI6IkLhuqFuIMSRw6Mgc+G7rSBk4bulbmcgbcOjIG7DoHkgMiBs4bqnbiAoxJHDoyDEkeG6oXQgZ2nhu5tpIGjhuqFuKSJ9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "031452192680fa7b8c5a-4e2c2148a04bd8e69116",
+          "file": "fr09/apply-coupon.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "FR09-12 Another user reaching the limit does not consume this user allowance",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2847,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T03:27:07.615Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "coupon-response",
+                      "contentType": "text/plain",
+                      "body": "SFRUUCAyMDAKeyJzdWNjZXNzIjp0cnVlLCJjb3Vwb25faWQiOjI3LCJkaXNjb3VudF9hbW91bnQiOjUwMDAwLCJmaW5hbF9hbW91bnQiOjI5OTUwMDAwLCJtZXNzYWdlIjoiw4FwIGThu6VuZyB0aMOgbmggY8O0bmchIEdp4bqjbSA1MCwwMDAg4oKrIn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "031452192680fa7b8c5a-f9a2c617e17d84d6e2e9",
+          "file": "fr09/apply-coupon.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "FR09-13 Reject coupon above the per-user limit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3091,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T03:27:10.473Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "coupon-response",
+                      "contentType": "text/plain",
+                      "body": "SFRUUCA0MDAKeyJlcnJvciI6IkLhuqFuIMSRw6Mgc+G7rSBk4bulbmcgbcOjIG7DoHkgMiBs4bqnbiAoxJHDoyDEkeG6oXQgZ2nhu5tpIGjhuqFuKSJ9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "031452192680fa7b8c5a-7303cde356091d011fd5",
+          "file": "fr09/apply-coupon.spec.ts",
+          "line": 9,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-18T03:25:58.481Z",
+    "duration": 75540.66500000001,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

@@ -1,21 +1,13 @@
 # Video HW04
 
-| Video | Link YouTube Unlisted | Thời lượng | Feature |
+| Mục | Link YouTube Unlisted | Feature | Thời lượng bản đăng |
 | --- | --- | --- | --- |
-| Task 2 | Chưa có link | Tối thiểu 5 phút | FR-09 |
-| Minh họa Agent Skill | Chưa có link | Theo video thực tế | FR-09 |
+| Task 2 | [Video demo FR-09, bản tua](https://youtu.be/imoZLg2rSA8) | FR-09 | 3:22. Đề yêu cầu từ 5:00 |
+| Agent Skill | [Video minh họa Web Automation Testing](https://youtu.be/imoZLg2rSA8) | FR-09 | 3:22 |
 
-## Dàn ý Task 2
+Sinh viên xác nhận bản gốc dài hơn 5 phút. Video hiện tại là bản tua. Có thể đối chiếu dữ liệu biên, diff kiểm dòng Tổng thanh toán, báo cáo ba trình duyệt và issue từ các liên kết dưới đây.
 
-- Người làm tự thuyết minh bằng tiếng Việt, tối thiểu 5 phút.
-- Hiện mặt hoặc chạy `whoami` và `hostname` trong terminal.
-- Giới thiệu một script, file dữ liệu và yêu cầu được kiểm.
-- Chạy script trên cả ba trình duyệt. Mở HTML report và chỉ ra MSSV, ISO timestamp và kết quả.
-- Trình bày ít nhất một sửa đổi của mình đối với script do AI sinh.
-
-## Dàn ý minh họa Agent Skill
-
-[Kịch bản FR-09](docs/worked-example-fr09.md) nối SRS, dữ liệu ca biên, diff review, ba browser và issue HW04 mới.
-
-- Chọn một feature hoàn chỉnh.
-- Quay cách gọi skill, kiểm tra đầu ra, sửa script và chạy ra báo cáo.
+- [Hồ sơ FR-09](docs/features/fr09.md)
+- [Agent Skill Web Automation Testing](.agents/skills/web-automation-testing/SKILL.md)
+- [Ma trận FR-09 ngày 18/11/2026](reports/README.md#lượt-chạy-lại-fr-09-ngày-18112026)
+- [Issue #293](https://github.com/tkob-team/eshop-sut/issues/293)
